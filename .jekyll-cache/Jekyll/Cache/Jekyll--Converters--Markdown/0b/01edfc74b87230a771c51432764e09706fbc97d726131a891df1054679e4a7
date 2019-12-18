@@ -1,0 +1,36 @@
+I"I<p>On met en pratique la théorie sur l’agrandissement des caractères.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="justification-de-texte">Justification de texte</h3>
+<p><strong>Dans l’idéal, les textes ne doivent pas être justifiés</strong> car cela crée des espacements importants et irréguliers entre les mots, ce qui peut engendrer des difficultés de lecture. En effet sur le web, contrairement à l’imprimé, nous disposons de très peu de paramètres pour ajuster l’espacement. En l’occurrence <code class="highlighter-rouge">text-align</code> gère uniquement l’espace entre chaque mot et <code class="highlighter-rouge">letter-spacing</code> peut fixer au global l’espacement entre les caractères d’un mot.</p>
+
+<figure role="group">
+<img src="../images/posts/caps-justifie.png" alt="Text justifié" />
+<figcaption>Exemple de texte justifié présentant de nombreux espacements.</figcaption>
+</figure>
+
+<p>Pour autant, <strong>la justification de texte n’est pas interdite en accessibilité</strong>. D’une part, la justification de texte peut parfois s’avérer utile, comme dans la composition de colonnages. D’autre part, les textes peuvent être justifiés tant que les utilisateurs et utilisatrices disposent d’un moyen pour annuler cette justification.</p>
+
+<p>Le <a href="https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#crit-10-9">critère 10.9 du Référentiel Général d’Amélioration de l’Accessibilité (RGAA) version 3<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> énonçait ceci :</p>
+
+<blockquote>
+  <p>Pour chaque page web, le texte ne doit pas être justifié. Cette règle est-elle respectée ?</p>
+</blockquote>
+
+<p>Afin de valider ce critères, une des conditions suivantes devait être vérifiée :</p>
+<ul>
+  <li>Le texte n’est pas justifié.</li>
+  <li>Un mécanisme permet à l’utilisateur de supprimer la justification du texte.</li>
+</ul>
+
+<p>Le mécanisme en question peut par exemple être un commutateur de styles, sur le même principe que l’adaptation des couleurs et des contrastes.</p>
+
+<p>Le RGAA 4 ne fait désormais plus référence à la justification du texte car il s’agit d’un critère de niveau AAA (le RGAA 4 comporte uniquement des critères de niveau A et AA). La justification du texte n’est donc pas un manquement à la conformité du RGAA, toutefois il s’agit d’une bonne pratique à adapter en fonction des situations. Dans cet article <a href="http://typographisme.net/post/La-justification-sur-le-web-:-usages-et-pr%C3%A9cautions">La justification sur le web : usages et précautions</a>, l’auteur écrit ainsi :</p>
+
+<blockquote>
+  <p>Sur ce site, le texte est justifié parce que j’ai essayé pour voir et que j’ai été toute étonnée de voir que ça marchait. […] Le résultat n’est pas parfait, mais nous avons jugé que nous préférions les imperfections de la justification au déséquilibre de la composition en drapeau, dans la mesure où les imperfections ne nous semblaient pas faire obstacle à la lisibilité du texte. C’est une affaire de choix, de priorité et de bon sens.</p>
+</blockquote>
+
+:ET

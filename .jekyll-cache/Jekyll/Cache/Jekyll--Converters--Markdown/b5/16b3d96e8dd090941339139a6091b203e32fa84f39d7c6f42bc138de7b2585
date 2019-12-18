@@ -1,0 +1,15 @@
+I"�<p>On met en pratique la théorie sur l’agrandissement des caractères.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="justification-de-texte">Justification de texte</h3>
+<p><strong>Dans l’idéal, les textes ne doivent pas être justifiés</strong> car cela crée des espacements importants et irréguliers entre les mots, ce qui peut engendrer des difficultés de lecture. En effet sur le web, contrairement à l’imprimé, nous disposons de très peu de paramètres pour ajuster l’espacement. En l’occurrence <code class="highlighter-rouge">text-align</code> gère uniquement l’espace entre chaque mot et <code class="highlighter-rouge">letter-spacing</code> peut fixer au global l’espacement entre les caractères d’un mot.</p>
+
+<figure role="group">
+<img src="../images/posts/caps-justifie.png" alt="Text justifié" />
+<figcaption>Exemple de texte justifié présentant de nombreux espacements.</figcaption>
+</figure>
+
+<p>Pour autant, <strong>la justification de texte n’est pas interdite en accessibilité</strong>. D’une part, <strong>la justification de texte peut parfois s’avérer utile</strong>, comme dans la composition de colonnages. D’autre part, <strong>les textes peuvent être justifiés tant que les utilisateurs et utilisatrices disposent d’un moyen pour annuler cette justification</strong>.</p>
+:ET
