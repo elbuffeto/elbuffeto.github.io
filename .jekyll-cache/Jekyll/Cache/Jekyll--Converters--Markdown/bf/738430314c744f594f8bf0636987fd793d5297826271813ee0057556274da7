@@ -1,0 +1,76 @@
+I",<p>Justifier ou ne pas justifier ? Telle est la question.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="http://typographisme.net/post/La-justification-sur-le-web-:-usages-et-pr%C3%A9cautions">La justification sur le web : usages et précautions<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du site Typographisme</li>
+  <li>lire l’article <a href="https://www.fabricecourt.com/formation/doit-on-justifier-un-texte-sur-le-web/">Doit-on justifier le texte sur un site internet ?<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> par Fabrice Court</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<p>Je partais sur cet article avec un gros à priori car cela fait des années que je répète autour de moi, et particulièrement aux designers, “Ne justifiez pas votre texte, surtout pas !”. Force est de constater que j’ai désormais un avis plus nuancé sur la question. Je vous explique en détails pourquoi.</p>
+
+<h3 id="justification-de-texte-esthétique-et-accessibilité">Justification de texte, esthétique et accessibilité</h3>
+<p>L’un des principaux problèmes soulevés par la justification du texte sur le web, c’est <strong>l’apparition d’espacements importants et irréguliers entre les mots</strong>. En effet sur le web, contrairement à l’imprimé, nous disposons de très peu de paramètres pour ajuster l’espacement. En l’occurrence <code class="highlighter-rouge">text-align: justify;</code> gère uniquement l’espace entre chaque mot (de sorte qu’une ligne occupe toute la largeur du bloc) et <code class="highlighter-rouge">letter-spacing</code> fixe au global l’espacement entre les caractères d’un mot.</p>
+
+<figure role="group">
+<img src="../images/posts/caps-justifie.png" alt="Text justifié" />
+<figcaption>Exemple de texte justifié présentant de nombreux espacements.</figcaption>
+</figure>
+
+<p><strong>Outre un aspect esthétique dérangeant, la justification du texte peut entraîner des difficultés de lecture</strong>, en particulier pour les personnes dyslexiques ou souffrant de troubles cognitifs. Contrairement à l’imprimé, le cadre du web est changeant - du fait de la diversité des tailles d’écran, des sytèmes d’exploitation, des navigateurs - et sans cesse en mouvement - on peut faire défiler une page horizontalement et verticalement -. Sur une lecture papier, nous pouvons poser notre doigt comme repère, sur l’écran il n’existe pas de repère immuable. Un texte aligné à gauche permet d’accrocher le regard sur les différents points d’aspérité des lignes, contrairement au texte justifié où plus aucun repère ne se dégage.</p>
+
+<p>Pour autant, la justification de texte n’est pas expressément interdite en accessibilité.</p>
+
+<h3 id="la-justification-du-texte-dans-les-textes-de-référence">La justification du texte dans les textes de référence</h3>
+<p>Si l’on s’en tient au cadre purement normatif des standards d’accessibilité, la justification de texte n’est pas recommandée mais est néanmoins tolérée à certaines conditions.</p>
+
+<p>Le <a href="https://references.modernisation.gouv.fr/rgaa-accessibilite/criteres.html#crit-10-9">critère 10.9 du Référentiel Général d’Amélioration de l’Accessibilité (RGAA) version 3<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> énonce ceci :</p>
+
+<blockquote>
+  <p>Pour chaque page web, le texte ne doit pas être justifié. Cette règle est-elle respectée ?</p>
+</blockquote>
+
+<p>Afin de valider ce critère, une des conditions suivantes doit être vérifiée :</p>
+<ul>
+  <li>Le texte n’est pas justifié.</li>
+  <li>Un mécanisme permet à l’utilisateur de supprimer la justification du texte.</li>
+</ul>
+
+<p><strong>On peut donc justifier le texte, à condition de proposer aux utilisateurs et utilisatrices un mécanisme d’adaptation</strong>. Le mécanisme en question peut, par exemple, être <strong>un commutateur de styles</strong>, sur le même principe que l’adaptation des couleurs et des contrastes.</p>
+
+<p><strong>Le RGAA 4 ne fait désormais plus référence à la justification du texte</strong> car il s’agit d’un critère de niveau AAA (le RGAA 4 se réfère désormais uniquement aux critères de niveau A et AA). <strong>La justification du texte n’est donc pas un manquement à la conformité du RGAA</strong>.</p>
+
+<p>Les <span lang="en">Web Content Accessibility Guidelines</span> (WCAG) 2.1 quant à elles, recommandent également de ne pas justifier le texte et si tel est le cas, de <a href="https://www.w3.org/WAI/WCAG21/Techniques/general/G172" hreflang="en">fournir un mécanisme permettant son annulation<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>.</p>
+
+<p><strong>La justification de texte n’est donc pas interdite en accessibilité</strong>, si tant est que les utilisateurs et utilisatrices disposent d’un moyen pour annuler cette justification. La règle actuellement privilégiée est d’interdire la justification du texte afin d’éviter les plus gros écueils. C’est la recommandation donnée par AcceDe Web dans sa notice <a href="https://www.accede-web.com/notices/graphique/2-textes-symboles/2-2-ne-pas-justifier-texte/">Ne pas justifier le texte<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>. Toutefois, cette position peut être nuancée.</p>
+
+<h3 id="justifier-avec-sagesse-et-prudence">Justifier avec sagesse et prudence</h3>
+<p>Dans cet article <a href="http://typographisme.net/post/La-justification-sur-le-web-:-usages-et-pr%C3%A9cautions">La justification sur le web : usages et précautions<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>, l’auteur écrit ainsi :</p>
+
+<blockquote>
+  <p>Sur ce site, le texte est justifié parce que j’ai essayé pour voir et que j’ai été toute étonnée de voir que ça marchait. […] Le résultat n’est pas parfait, mais nous avons jugé que nous préférions les imperfections de la justification au déséquilibre de la composition en drapeau, dans la mesure où les imperfections ne nous semblaient pas faire obstacle à la lisibilité du texte. C’est une affaire de choix, de priorité et de bon sens.</p>
+</blockquote>
+
+<p><strong>La justification d’un texte en ligne est possible, à condition de bien en comprendre les risques et de s’y connaître suffisamment pour résoudre les éventuels problèmes</strong>. Le site <a href="http://typographisme.net/">Typographisme.net<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> revendique le choix de la justification et l’applique à tous ses articles. Je suis quelqu’un de plutôt allergique au texte justifié, pourtant cela ne m’a absolument pas dérangé sur ce site, je ne l’avais d’ailleurs pas vraiment remarqué.</p>
+
+<p>Si ce choix est fait, plusieurs éléments doivent être pris en compte afin de garantir le meilleur confort de lecture possible :</p>
+<ul>
+  <li>un choix de police adapté</li>
+  <li>un bloc suffisamment large (autour de 60 caractères en français)</li>
+  <li>une couleur de texte qui diminue le contraste avec l’arrière-plan</li>
+  <li>des scripts javascript ou des propriétés CSS permettant de gérer automatiquement la césure, dans le respect de la langue du texte</li>
+</ul>
+
+<p>Le site Typographisme ne propose cependant pas de mécanisme permettant de supprimer la justification, ce que je trouve à mon sens dommage car certes je n’ai eu aucun problème à la lecture, mais en tant que professionels et professionelles du web, nous nous devons de penser nos sites pour le plus grand nombre de personnes : d’autres internautes éprouveront peut être des difficultés à lire ces articles.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>Je reste convaincue que la justification de texte est à éviter sur le web pour des questions de lisibilité et de confort de lecture. Cependant, j’aurais appris qu’accessibilité et justification de texte ne sont pas nécessairement incompatibles et que l’on peut justifier du texte sur un site à condition de respecter certains conditions :</p>
+<ul>
+  <li>
+    <p>proposer un mécanisme d’adaptation afin de contenter tous les utilisateurs et toutes les utilisatrices</p>
+  </li>
+  <li>
+    <p>avoir une bonne connaissance des règles typographiques pour faciliter au maximum la lecture.</p>
+  </li>
+</ul>
+:ET
