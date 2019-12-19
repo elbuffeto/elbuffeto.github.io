@@ -110,11 +110,16 @@ img {
   max-width: 100%;
 }
 
-figcaption {
-  color: $gray;
-  font-size: 1.6rem;
+figure {
+  margin-bottom: 4rem;;
   text-align: center;
+
+  figcaption {
+    color: $gray;
+    font-size: 1.6rem;
+  }
 }
+
 
 // Fixes images in popup boxes from Google Translate
 .gmnoprint img {
