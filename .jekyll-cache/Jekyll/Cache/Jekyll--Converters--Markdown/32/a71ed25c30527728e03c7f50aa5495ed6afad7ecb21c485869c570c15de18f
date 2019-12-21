@@ -1,0 +1,89 @@
+I"�<p>Comment laisser à l’internaute la possibilité d’adapter le texte selon ses besoins ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/inc-con-aerer-texte.html">Permettre d’aérer le texte<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire l’article <a href="https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html" lang="en" hreflang="en">Understanding Success Criterion 1.4.12: Text Spacing<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> des WCAG (<span lang="en">Web Content Accessibility Guidelines</span>)</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="un-nouveau-critère-des-wcag">Un nouveau critère des WCAG</h3>
+<p>Ce critère d’adaptation du texte a fait son apparition dans les WCAG 2.1 et la version 4 du RGAA (Référentiel Général d’Amélioration de l’Accessibilité). Ce critère est le suivant :</p>
+
+<blockquote>
+  <p>Dans chaque page web, les propriétés d’espacement du texte peuvent-elles être redéfinies par l’utilisateur sans perte de contenu ou de fonctionnalité (hors cas particuliers) ?</p>
+</blockquote>
+
+<p>Concrètement, il s’agit de <strong>permettre à l’internaute de personnaliser l’affichage du contenu pour améliorer son confort de lecture sans perte d’information</strong>.</p>
+
+<p>Ce critère est important pour les personnes malvoyantes et les personnes souffrant de dyslexie qui ont besoin d’agrandir l’espace entre les paragraphes, les mots et les lettres pour faciliter leur lecture.</p>
+
+<h3 id="mise-en-oeuvre">Mise en oeuvre</h3>
+<p>L’utilisateur ou l’utilisatrice doit être en mesure d’appliquer les modifications suivantes sans que le contenu ne soit tronqué ou se superpose à un autre contenu :</p>
+<ul>
+  <li>
+    <p>l’espacement entre les lignes (<code class="highlighter-rouge">line-height</code>) doit pouvoir être augmenté à 1,5 fois minimum la taille de la police</p>
+  </li>
+  <li>
+    <p>l’espacement entre chaque paragraphe (<code class="highlighter-rouge">&lt;p&gt;</code>) doit pouvoir être augmenté à 2 fois minimum la taille de la police</p>
+  </li>
+  <li>
+    <p>l’espacement des lettres (<code class="highlighter-rouge">letter-spacing</code>) doit pouvoir être augmenté à 0,12 fois minimum la taille de la police</p>
+  </li>
+  <li>
+    <p>l’espacement des mots (<code class="highlighter-rouge">word-spacing</code>) doit pouvoir être augmenté à 0,16 fois minimum la taille de la police</p>
+  </li>
+</ul>
+
+<p>Ces tests reviennent dont à appliquer les styles suivants :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>* {
+    line-height: 1.5 !important;
+    letter-spacing: .12em !important;
+    word-spacing: .16em !important;
+}
+
+p {
+    margin-bottom: 2em !important;
+}
+</code></pre></div></div>
+
+<p>Notez que <strong>les valeurs des tests sont bien des valeurs minimales à appliquer</strong>. Les WCAG sont plutôt claires sur ce sujet puisqu’elles énoncent :</p>
+<blockquote>
+  <p><span lang="en"> Line height (line spacing) to at least 1.5 times the font size</span>.</p>
+</blockquote>
+
+<p>L’emploi du terme “<span lang="en">at least</span>” traduit par “au moins” ne laisse pas de doute, tandis que le RGAA formule le test de la façon suivante :</p>
+<blockquote>
+  <p>L’espacement entre les lignes (line-height) est augmenté jusqu’à 1,5 fois la taille de la police.</p>
+</blockquote>
+
+<p>Le terme “jusqu’à” peut, à mon sens, porter à confusion.</p>
+
+<p>Les sous-titres directement intégrés dans une vidéo, les images-texte et les textes contenus dans une balise <code class="highlighter-rouge">&lt;canvas&gt;</code> ne sont pas concernés par ce critère.</p>
+
+<h3 id="le-bookmarklet-text-spacing-pour-faciliter-les-tests">Le bookmarklet “<span lang="en">Text spacing</span>” pour faciliter les tests</h3>
+<p>Vous pouvez utiliser <strong>le bookmarklet de Steve Faulkner</strong> que vous pouvez retrouver sur Codepen : <a href="https://codepen.io/stevef/pen/YLMqbo" lang="en" hreflang="en">Text spacing bookmarklet<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>.</p>
+
+<p>A titre indicatif, et pour celles et ceux comme moi qui l’ignoraient, un bookmarklet (ou signapplet en français) est un petit programme Javascript qui peut être stocké en tant qu’URL dans un signet ou en tant qu’hyperlien dans une page web.</p>
+
+<p>Le bookmarklet de Steve Faulkner permet de vérifier la bonne implémentation de ce critère d’accessibilité : il applique les styles CSS (Cascading Style Sheets) vus précédemment à la page courante du navigateur vous permettant ainsi facilement de vérifier qu’il n’y a pas de perte de contenu ou de fonctionnalité.</p>
+
+<figure role="group">
+<img src="../images/posts/libe-1.png" alt="Exemple avant utilisation du bookmarklet sur le site Libération" />
+<figcaption>Capture d'écran du site Libération avant utilisation du bookmarklet : on voit le texte déjà légèrement tronqué sur le premier item, sans doute à cause de la hauteur fixe de l'élément.</figcaption>
+</figure>
+
+<figure role="group">
+<img src="../images/posts/libe-2.png" alt="Exemple après utilisation du bookmarklet sur le site Libération" />
+<figcaption>Capture d'écran du site Libération après utilisation du bookmarklet : cette fois presque tous les items sont tronqués.</figcaption>
+</figure>
+
+<h3 id="vers-une-adaptation-encore-plus-poussée-">Vers une adaptation encore plus poussée ?</h3>
+<p>On pourrait pousser ce critère encore plus loin en intégrant également la possibilité pour l’internaute de changer la police de caractères, sa couleur ou la couleur d’arrière plan sans perte d’information. Ces possibilités de personnalisation sont en cours de discussion au sein du W3C (World Wide Web Consortium).</p>
+
+<p>Acutellement la mise en place de commutateurs de styles peut permettre à l’internaute d’accentuer les contrastes ou de les inverser, de changer la police (pour une police plus adaptées aux personnes dyslexiques par exemple), d’adapter les couleurs pour les personnes souffrant de daltonisme… Cependant, intégrer ces commutateurs dans les sites représente un travail non négligeable et ne permet pas de couvrir les besoins de tous et toutes.</p>
+
+<p><strong>Laisser les utilisateurs et utilisatrices adapter les contenus comme ils et elles le désirent, tout en leur garantissant un accès égal et non déterioré à l’information, me paraît donc être essentiel</strong>.</p>
+
+:ET

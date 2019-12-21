@@ -1,0 +1,54 @@
+I"F<p>Comment laisser à l’internaute la possibilité d’adapter le texte selon ses besoins ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/inc-con-aerer-texte.html">Permettre d’aérer le texte<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire l’article <a href="https://www.w3.org/WAI/WCAG21/Understanding/text-spacing.html">Understanding Success Criterion 1.4.12: Text Spacing<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> des WCAG (<span lang="en">Web Content Accessibility Guidelines</span>)</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="analyse-du-critère">Analyse du critère</h3>
+<p>Dans un précédent article intitulé <a href="/100daysofa11y-day39/">Information et couleurs<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> que l’information ne devait pas être donnée uniquement par la couleur. Les critères 10.9 et 10.10 sur RGAA (Référentiel Général d’Amélioration de l’Accessibilité) s’intéressent cette fois à <strong>l’information transmise par la forme, la taille ou la position</strong>.</p>
+
+<blockquote>
+  <p>Critère 10.9. Dans chaque page web, l’information ne doit pas être donnée uniquement par la forme, taille ou position. Cette règle est-elle respectée ?</p>
+</blockquote>
+
+<blockquote>
+  <p>Critère 10.10. Dans chaque page web, l’information ne doit pas être donnée par la forme, taille ou position uniquement. Cette règle est-elle implémentée de façon pertinente ?</p>
+</blockquote>
+
+<p>Ces critères s’appliquent aux textes et images, ainsi qu’aux <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode/glossaire/#media-non-temporel">médias non temporels<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> et <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode/glossaire/#media-temporel-type-son-video-et-synchronise">médias temporels<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>.</p>
+
+<p><strong>Les personnes aveugles ou malvoyantes peuvent en effet être dans l’incapacité de comprendre une information si elle est véhiculée uniquement par sa forme, sa taille ou sa position</strong>. En effet, en raison du principe du web qui vise à séparer le style du contenu, des indications du type “bouton carré” ou “bouton situé à droite” ne sont pas perceptibles par des utilisateurs ou utilisatrices dont les technologies d’assistance analysent uniquement le contenu.</p>
+
+<p><strong>En revanche, ce type d’indication peut être efficace pour d’autres utilisateurs, notamment les personnes ayant des déficits cognitifs</strong>.</p>
+
+<p>En d’autre terme, <strong>il ne s’agit pas d’interdire formellement les indications données par la forme, la taille et la position, mais de les doter d’alternatives pertinentes pour permettre à tous d’y accéder</strong>. Par pertinentes, on entend notamment le fait que la couleur ne doit pas être la seule alternative proposée, les utilisateurs aveugles ne voyant ni forme ni couleur.</p>
+
+<h3 id="une-grande-variété-de-cas">Une grande variété de cas</h3>
+<p>Au cours de mes recherches sur cet article, j’ai eu énormément de mal à dégager des exemples types pour illustrer ces critères d’accessibilité. Ils regroupent en effet une grande variété de cas :</p>
+<ul>
+  <li>
+    <p>une instruction du type “Cliquez sur l’icône carré pour continuer” (indication donnée par la forme)</p>
+  </li>
+  <li>
+    <p>un nuage de tags où le score de pertinence est signalé par la taille des caractères (indication donnée par la taille)</p>
+  </li>
+  <li>
+    <p>la présence d’un marqueur visuel, pour indiquer la page active dans un menu de navigation (indication donnée par la position)</p>
+  </li>
+  <li>
+    <p>sur un site e-commerce une icône “X” seule pour signaler qu’un produit est actuellement en rupture de stock (indication donnée par la forme)</p>
+  </li>
+</ul>
+
+<h4 id="un-exemple--la-position-courante-dans-un-système-de-navigation">Un exemple : la position courante dans un système de navigation</h4>
+<p>Prenons l’exemple de ce blog. La position courante est indiquée graphiquement dans le menu par une bordure bleu.</p>
+
+<figure role="group">
+  &lt;img src="../images/posts/caps-blog.png" alt="Page "A propos" de ce blog" /&gt;
+  <figcaption>Capture d'écran du présent blog montrant le haut de la page "A propos", composée de l'image et du titre du blog, de la navigation et du début de contenu de la page.</figcaption>
+</figure>
+
+:ET
