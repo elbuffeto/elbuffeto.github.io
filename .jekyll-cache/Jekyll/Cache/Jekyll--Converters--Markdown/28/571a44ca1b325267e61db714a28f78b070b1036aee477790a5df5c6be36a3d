@@ -1,0 +1,91 @@
+I"8,<p>Comment garantir la lisibilité et la compréhension de l’information lorsque les styles sont désactivés ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://disic.github.io/guide-integrateur/8-distinction-fond-forme.html">Respecter la distinction fond et forme<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide de l’intégrateur</li>
+  <li>lire l’article <a href="https://www.nicolas-hoffmann.net/source/1447-Background-image-couleurs-CSS-accessibilite.html">Background-image et couleurs CSS<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Nicolas Hoffmann</li>
+  <li>lire les notices <a href="https://www.accede-web.com/notices/html-css-javascript/10-css/10-3-comprehension-information-css-desactive/">Garantir la compréhension de l’information même lorsque CSS est désactivé<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> et <a href="https://www.accede-web.com/notices/html-css-javascript/10-css/10-2-lisibilite-contenus-images-pas-affichees/">Garantir la lisibilité des contenus lorsque les images ne sont pas affichées<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’AcceDe Web</li>
+  <li>lire l’article <a href="https://developer.mozilla.org/fr/docs/Web/CSS/CSS_Grid_Layout/Les_grilles_CSS_et_l_accessibilit%C3%A9">Les grilles CSS et l’accessibilité<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="rappel--distinction-fond-et-forme">Rappel : distinction fond et forme</h3>
+<p>On ne le répétera jamais assez mais le développement d’un site web repose sur la distinction entre le contenu et sa mise en forme. Le HTML (HyperText Markup Language) permet de baliser sémantiquement le contenu tandis que le CSS (Cascading Style Sheets) permet de réaliser sa mise en forme. Cela signifie deux choses :</p>
+<ul>
+  <li>
+    <p><strong>la mise en forme ne doit jamais apporter du sens au contenu et le contenu ne doit pas être pourvu d’éléments de mises en forme</strong></p>
+  </li>
+  <li>
+    <p><strong>un site doit être compréhensible sans mise en forme</strong></p>
+  </li>
+</ul>
+
+<p>En effet, les technologies d’assistance restituent uniquement le contenu et n’ont pas accès à la mise en forme. D’autre part, certains internautes sont susceptibles de modifier les styles du site pour adapter la présentation à leurs propres besoins (des contrastes plus élevés, la taille des caractères…). <strong>Par conséquent, si les styles apportent de l’information, tous les internautes ne pourront pas y avoir accès</strong>.</p>
+
+<p>En conséquence :</p>
+<ul>
+  <li>
+    <p><strong>ne pas utiliser les balises HTML à des fins de présentation</strong> : par exemple, utiliser une balise <code class="highlighter-rouge">&lt;h1&gt;</code> pour avoir un texte de grande taille</p>
+  </li>
+  <li>
+    <p><strong>ne pas utiliser d’éléments ou d’attributs de mise en forme</strong> : par exemple des éléments <code class="highlighter-rouge">&lt;center&gt;</code>, <code class="highlighter-rouge">&lt;u&gt;</code> ou <code class="highlighter-rouge">&lt;marquee&gt;</code>, ou des attributs <code class="highlighter-rouge">align</code>, <code class="highlighter-rouge">bgcolor</code> ou <code class="highlighter-rouge">border</code></p>
+  </li>
+  <li>
+    <p><strong>ne pas générer de contenu en CSS</strong> via la propriété <code class="highlighter-rouge">content</code> et les pseudo-sélecteurs <code class="highlighter-rouge">::after</code> et <code class="highlighter-rouge">::before</code>. Par exemple :</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>a[href*=".pdf"]::after {
+  content: ' (PDF)';
+}
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="le-contenu-doit-demeurer-visible-et-compréhensible-sans-css">Le contenu doit demeurer visible et compréhensible sans CSS</h3>
+<p>Le RGAA (Référentiel Général d’Amélioration de l’Accessibilité) énonce les deux critères suivants :</p>
+
+<blockquote>
+  <p>Critère 10.2. Dans chaque page web, le contenu visible reste-t-il présent lorsque les feuilles de styles sont désactivées ?</p>
+</blockquote>
+
+<blockquote>
+  <p>Critère 10.3. Dans chaque page web, l’information reste-t-elle compréhensible lorsque les feuilles de styles sont désactivées ?</p>
+</blockquote>
+
+<p>Il s’agit de vérifier que la désactivation des styles ou des images n’entraîne pas une perte d’information.</p>
+
+<p><em>Note</em> : il est facile de désactiver les styles ou les images grâce à la barre d’outils de Web Developer.</p>
+<ul>
+  <li>aller dans l’onglet ‘CSS’ &gt; ‘<span lang="en">Disable all styles</span>’</li>
+  <li>aller dans l’onglet ‘Images’ &gt; ‘<span lang="en">Hide images</span>’</li>
+</ul>
+
+<h4 id="les-images-intégrées-en-css">Les images intégrées en CSS</h4>
+<p>Une attention particulière doit être portée aux images de fond, c’est à dire les images insérées grâce aux propriétés <code class="highlighter-rouge">background</code> et <code class="highlighter-rouge">background-image</code> :</p>
+<ul>
+  <li>
+    <p><strong>il faut à tout prix éviter d’intégrer des images de fond porteuses d’information</strong> car alors le contenu sera perdu pour certains internautes. Si aucune autre solution ne peut être mise en place, veillez comme toujours à fournir une alternative textuelle, par exemple par le biais d’un texte caché en CSS.</p>
+  </li>
+  <li>
+    <p><strong>lorsqu’un texte est superposé à une image de fond décorative, il est important de mettre en place une couleur de remplacement</strong> qui garantira la lisibilité du texte en l’absence de cette dernière. En effet si vous n’indiquez pas de couleur spécifique, la couleur héritée est susceptible de poser un problème d’accessibilité (notons bien qu’il peut aussi arriver que la couleur héritée permette de lire le texte). On peut indiquer la couleur de la manière suivante :</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>background: #000 url(images/fond.jpg) center no-repeat;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h4 id="les-images-intégrées-en-html">Les images intégrées en HTML</h4>
+<p>Les images porteuses de sens intégrées en HTML grâce à la balise <code class="highlighter-rouge">&lt;img /&gt;</code> peuvent elles aussi être désactivées. Dans ce cas, <strong>le contenu de l’attribut <code class="highlighter-rouge">alt</code> doit demeurer visible</strong>. Prévoir une couleur de fond dans ce cas là est donc tout aussi important que pour des images intégrées en CSS.</p>
+
+<p><em>Note</em> : il est facile de remplacer les images par leur attribut <code class="highlighter-rouge">alt</code> grâce à la barre d’outils de Web Developer.</p>
+<ul>
+  <li>aller dans l’onglet ‘Images’ &gt; ‘<span lang="en">Replace images with alt attributes</span>’</li>
+</ul>
+
+<h4 id="la-mise-en-forme-ne-doit-pas-se-faire-au-détriment-de-la-compréhension">La mise en forme ne doit pas se faire au détriment de la compréhension</h4>
+<p>Il est souvent demandé aux intégrateurs et intégratrices de réaliser des mises en forme complexes. Fort heureusement, les possibilités d’agencement et layout ont beaucoup évolué depuis les sites construits grâce aux tableaux HTML. Flexbox et Grid nous permettent des gabarits complexes et même de réordonner le contenu pour qu’ils apparaissent dans un ordre différent de celui défini dans le code source, par exemple avec les propriétés <code class="highlighter-rouge">order</code> ou <code class="highlighter-rouge">grid-auto-flow: dense</code>.</p>
+
+<p><strong>Pour autant, ces propriétés d’ordre et de placement doivent être utilisées uniquement pour des raisons visuelles et non pour réordonner logiquement le contenu</strong>. En effet, lorsque des feuilles de styles utilisent ces propriétés pour réordonner les éléments de manière logique, les technologies d’assistance ne sont pas à même de percevoir cette information et lisent l’ordre donné dans le code HTML. Lorsque nous concevons un site, il est donc important de nous poser la question suivante : <strong>sans mise en forme, dans l’ordre de lecture tel que défini par le code HTML, mon contenu est-il compréhensible ?</strong></p>
+
+<p>Le guide de l’intégrateur fournit <a href="https://disic.github.io/guide-integrateur/8-distinction-fond-forme.html#comprehensiblesanscss">un exemple d’implémentation basique d’un bloc d’actualités<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> et montre la construction à privilégier pour garantir la meilleure restitution possible de l’information.</p>
+
+:ET
