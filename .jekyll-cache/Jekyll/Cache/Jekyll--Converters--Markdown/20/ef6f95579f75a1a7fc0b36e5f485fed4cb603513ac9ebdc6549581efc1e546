@@ -1,0 +1,109 @@
+I"(<p>Comment masquer des éléments de manière accessible ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/hidden">L’attribut <code class="highlighter-rouge">hidden</code><span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+  <li>lire l’article <a href="https://www.ffoodd.fr/cache-cache-css/">Cache-cache CSS<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Gaël Poupard</li>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/exemples/masquage/index.html">Masquer des éléments de manière accessible<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire l’article <a href="https://www.anysurfer.be/fr/en-pratique/sites-web/cacher-du-texte">Cacher du texte<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’AnySurfer</li>
+  <li>lire l’article <a href="https://www.lelutinduweb.fr/alternatives-textuelles-texte-masque-css/">Le vaste monde des alternatives textuelles : le texte masqué en CSS (5/6)<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Julie Moynat</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="masquer-un-contenu-pour-tout-le-monde">Masquer un contenu pour tout le monde</h3>
+<p>Il est courant de vouloir faire apparaître ou disparaître des éléments dans une page web. Par exemple :</p>
+<ul>
+  <li>
+    <p>des diaporamas où les images défilent une à une</p>
+  </li>
+  <li>
+    <p>afficher ou masquer un contenu en fonction de la taille de l’écran dans le cas d’un design responsive</p>
+  </li>
+</ul>
+
+<h4 id="les-propriétés-display-none-et-visibility-hidden">Les propriétés <code class="highlighter-rouge">display: none;</code> et <code class="highlighter-rouge">visibility: hidden</code></h4>
+<p><strong>La méthode classique pour cela est le recours aux propriétés <code class="highlighter-rouge">display: none;</code> et <code class="highlighter-rouge">visibility: hidden</code>.</strong> Ces deux propriétés impliquent plusieurs choses :</p>
+<ul>
+  <li>
+    <p>le contenu n’apparaît pas dans la page</p>
+  </li>
+  <li>
+    <p>le contenu n’est pas lisible par les lecteurs d’écran</p>
+  </li>
+  <li>
+    <p>le contenu ne peut pas recevoir le focus</p>
+  </li>
+  <li>
+    <p>le contenu reste visible dans le code source</p>
+  </li>
+  <li>
+    <p>le contenu apparaît lorsque le CSS (Cascading Style Sheets) est désactivé ou mal supporté</p>
+  </li>
+</ul>
+
+<p>Pour rappel, les éléments masqués avec la propriété <code class="highlighter-rouge">display: none;</code> n’affectent pas la disposition de la page, tandis que ceux masqués avec la propriété <code class="highlighter-rouge">visibility: hidden</code> occupent toujours l’espace qui leur est alloué.</p>
+
+<h4 id="lattribut-hidden">L’attribut <code class="highlighter-rouge">hidden</code></h4>
+<p>L’attribut <code class="highlighter-rouge">hidden</code> est un attribut booléen qui permet lui aussi de masquer des éléments. Il est très similaire aux propriétés <code class="highlighter-rouge">display: none;</code> et <code class="highlighter-rouge">visibility: hidden</code> avec un légère différence : il possède une valeur sémantique car il indique si le contenu n’est pas encore ou n’est plus pertinent à l’affichage. Voici un exemple d’utilisation :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p hidden&gt;
+  Ce texte est caché et n'apparaîtra pas.
+&lt;/p&gt;
+</code></pre></div></div>
+
+<p>En déclarant dans vos feuilles de style <code class="highlighter-rouge">[hidden] { display: none; }</code>, vous serez certains et certaines que les navigateurs ne supportant pas cet attribut masqueront bien vos éléments.</p>
+
+<h3 id="masquer-un-contenu-pour-tout-le-monde-sauf-les-technologies-dassistance">Masquer un contenu pour tout le monde, sauf les technologies d’assistance</h3>
+<p>Il arrive fréquemment que l’on souhaite masquer un contenu à l’écran mais qu’il demeure accessible aux personnes utilisant des technologies d’assistance. Par exemple :</p>
+<ul>
+  <li>
+    <p>une alternative textuelle pour une icône porteuse de sens</p>
+  </li>
+  <li>
+    <p>fournir des indications complémentaires aux utilisateurs et utilisatrices de technologies d’assistance</p>
+  </li>
+</ul>
+
+<p>Gaël Poupard, dans son article <a href="https://www.ffoodd.fr/cache-cache-css/">Cache-cache CSS<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>, propose la méthode suivante pour un support optimal :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>.sr-only {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+          clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
+</code></pre></div></div>
+
+<p>Cette méthode implique que :</p>
+<ul>
+  <li>
+    <p>le contenu n’apparaît pas dans la page</p>
+  </li>
+  <li>
+    <p>le contenu est lisible par les lecteurs d’écran</p>
+  </li>
+  <li>
+    <p>le contenu reste visible dans le code source</p>
+  </li>
+  <li>
+    <p>le contenu apparaît lorsque le CSS est désactivé ou mal supporté</p>
+  </li>
+</ul>
+
+<p>Attention cette méthode est recommandée pour du texte et par pour des éléments pouvant recevoir le focus, par exemple des liens d’évitement. Ces derniers doivent en effet être placés au début du code source et devenir visibles à la prise de focus. Pour mettre en place de manière accessible des liens d’évitement, vous pouvez vous reporter à l’article de Gaël Poupard <a href="https://www.ffoodd.fr/cache-cache-css/">Cache-cache CSS<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> ou à la notice d’AcceDe Web <a href="https://www.accede-web.com/notices/html-css-javascript/12-navigation-clavier/12-2-liens-evitement/">Mettre en place des liens d’évitement<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>.</p>
+
+<h3 id="masquer-un-contenu-uniquement-pour-les-technologies-dassistance">Masquer un contenu uniquement pour les technologies d’assistance</h3>
+<p>Enfin, il arrive également que l’on souhaite masquer des contenus spécifiquement pour les lecteurs d’écran, par exemple sur des SVG purement décoratifs. Dans ce cas, il suffit d’ajouter sur l’élément  l’attribut <code class="highlighter-rouge">aria-hidden="true"</code>. Le contenu sera ignoré par les lecteurs d’écrans mais restera visible pour les autres internautes.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;svg aria-hidden="true" focusable="false"&gt;
+  [...]
+&lt;/svg&gt;
+</code></pre></div></div>
+:ET
