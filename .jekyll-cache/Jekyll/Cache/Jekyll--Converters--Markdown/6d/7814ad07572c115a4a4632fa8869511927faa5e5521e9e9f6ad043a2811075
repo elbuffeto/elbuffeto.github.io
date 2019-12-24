@@ -1,0 +1,162 @@
+I"�@<p>Construire des formulaires accessibles en identifiant correctement les champs.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://disic.github.io/guide-integrateur/6-formulaires.html">Formulaires<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide de l’intégrateur</li>
+  <li>lire l’article <a href="https://disic.github.io/guide-concepteur/3-formulaires.html">Formulaires<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide du concepteur</li>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/inc-dev-etiquette-formulaires.html">Rendre accessible les champs de formulaire<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire l’article <a href="https://www.opquast.com/20170131placeholder-attribut-maudit/">Placeholder, l’attribut maudit<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Laurent Denis</li>
+  <li>lire l’article <a href="https://blog.atalan.fr/placeholder-et-accessibilite/">Placeholder et accessibilité<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du blog d’Atalan</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="les-formulaires-un-élément-incontournable-du-web">Les formulaires, un élément incontournable du web</h3>
+<p>Les formulaires sont, à mon sens, un des éléments les plus complexes à mettre en oeuvre sur un site web. Qui ne s’est pas déjà retrouvé en difficulté à remplir un formulaire ? :</p>
+<ul>
+  <li>
+    <p>Dois-je indiquer mon nom et mon prénom sur ce champ, ou juste mon nom ?</p>
+  </li>
+  <li>
+    <p>Dans quel format dois-je donner cette date ?</p>
+  </li>
+  <li>
+    <p>Pourquoi ma validation ne marche pas ? J’ai beau cliquer sur le bouton, il ne se passe rien !</p>
+  </li>
+</ul>
+
+<p>Nous avons tous et toutes déjà vécu ces situations et elles sont d’autant plus frustrantes que <strong>les formulaires sont généralement indispensables pour effecter des actions telles que faire un achat, compléter les informations d’un profil ou encore contacter un service</strong>. L’enjeu d’accessibilité de ces formulaires est donc extrêmement important : tout le monde doit pouvoir accéder aux mêmes informations et réaliser les actions souhaitées.</p>
+
+<h3 id="lidentification-des-champs">L’identification des champs</h3>
+<p>Les lecteurs d’écran permettent, grâce à des raccourcis clavier, de naviguer de champ en champ, et les outils de synthèse vocale proposent d’accéder aux différents champs par leur nom. <strong>Associer un champ de formulaire à une étiquette - c’est à dire un intitulé - est donc indispensable</strong> pour indiquer clairement à l’internaute le nom du champ sur lequel il ou elle se trouve et lui permettre de remplir au mieux le formulaire.</p>
+
+<p>L’étiquette de champ permet d’indiquer à l’internaute quelle donnée est attendue pour remplir le champ (un nom, une date, une adresse…). Pour être valide, une étiquette doit :</p>
+<ul>
+  <li>
+    <p>être pertinente</p>
+  </li>
+  <li>
+    <p>être correctement reliée à son champ</p>
+  </li>
+  <li>
+    <p>être visuellement accolée au champ</p>
+  </li>
+</ul>
+
+<h3 id="renseigner-une-étiquette-pertinente">Renseigner une étiquette pertinente</h3>
+<p>L’étiquette permet de faciliter la compréhension des données attendues dans un formulaire. <strong>Elle explicite le rôle d’un champ, ainsi que la nature des données attendues</strong> :</p>
+<ul>
+  <li>
+    <p><strong>le type de données</strong> (un nom, une date, une adresse…)</p>
+  </li>
+  <li>
+    <p><strong>le format des données</strong> (une date au format jour/mois/année)</p>
+  </li>
+  <li>
+    <p><strong>le poids ou le format d’un fichier</strong></p>
+  </li>
+</ul>
+
+<p>Il n’est pas nécessaire d’écrire de grandes phrases, mieux vaut rester concis afin que l’internaute comprenne au mieux ce qu’on attend de lui ou d’elle. Par exemple :</p>
+<ul>
+  <li>
+    <p>Nom</p>
+  </li>
+  <li>
+    <p>Prénom</p>
+  </li>
+  <li>
+    <p>Téléphone (ex : +33612345678)</p>
+  </li>
+</ul>
+
+<p>Il est important de prévoir des étiquettes identiques pour les champs présents plusieurs fois dans la page et dont la fonction est identique. Par exemple, sur un site de voyage, les étiquettes <code class="highlighter-rouge">Ville de départ</code> et <code class="highlighter-rouge">Ville d'arrivée</code> doivent être les mêmes sur le formulaire de voyage par train et le formulaire de voyage par avion.</p>
+
+<h3 id="relier-correctement-létiquette-à-son-champ">Relier correctement l’étiquette à son champ</h3>
+<p>Plusieurs techniques permettent de relier une étiquette à son champ.</p>
+
+<h4 id="labelliser-avec-la-balise-label-et-les-attributs-for-et-id">Labelliser avec la balise <code class="highlighter-rouge">&lt;label&gt;</code> et les attributs <code class="highlighter-rouge">for</code> et <code class="highlighter-rouge">id</code></h4>
+<p>Le première méthode à privilégier est la relation HTML (<span lang="en">HyperText Markup Language</span>) entre un champ et son étiquette grâce à la balise <code class="highlighter-rouge">&lt;label&gt;</code> et aux attributs <code class="highlighter-rouge">for</code> et <code class="highlighter-rouge">id</code>. Un label est dit <strong>“explicite”</strong> lorsqu’il possède un attribut “for” dont la valeur correspond à la valeur de l’attribut “id” du champ qui lui est associé, comme c’est le cas avec l’exemple suivant :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label for="prenom"&gt;Prénom&lt;/label&gt;
+&lt;input type="text" id="prenom" /&gt;
+</code></pre></div></div>
+
+<p>Un label est dit <strong>“implicite”</strong> lorsqu’il inclut directement le champ en tant qu’élément enfant. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label&gt;
+  Prénom
+  &lt;input type="text" /&gt;
+&lt;/label&gt;
+</code></pre></div></div>
+
+<p>Néanmoins, ce type de code peut poser des problèmes de restitution par les technologies d’assistance. Mieux vaut donc préciser la relation grâce aux attributs <code class="highlighter-rouge">for</code> et <code class="highlighter-rouge">id</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label for="prenom"&gt;
+  Prénom
+  &lt;input type="text" id="prenom" /&gt;
+&lt;/label&gt;
+</code></pre></div></div>
+
+<p>Ce type de labellisation permet à tous les utilisateurs et utilisatrices d’accéder au même niveau d’information et il facilite la manipulation en agrandissant la surface de clic du champ (en cliquant sur l’étiquette, le curseur se place automatiquement dans le champ).</p>
+
+<h4 id="labelliser-avec-lattribut-title">Labelliser avec l’attribut <code class="highlighter-rouge">title</code></h4>
+<p>On peut également renseigner le libellé d’un champ grâce à l’attribut <code class="highlighter-rouge">title</code>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;input type="text" id="prenom" title="Prénom" /&gt;
+</code></pre></div></div>
+
+<p>Toutefois, comme nous l’avons déjà vu, l’attribut <code class="highlighter-rouge">title</code> n’étant disponible qu’au survol de la souris, il n’apparaîtra pas dans le cas d’une navigation au clavier ou sur mobile. Son implémentation est donc, dans la mesure du possible, à éviter.</p>
+
+<h4 id="labelliser-avec-aria-accessible-rich-internet-applications">Labelliser avec ARIA (<span lang="en">Accessible Rich Internet Applications</span>)</h4>
+<p>Recourir à l’attribut <code class="highlighter-rouge">&lt;label&gt;</code> est parfaitement approprié pour labelliser des formulaires, cependant de nombreux formulaires sont implémentés sous la forme de composants Javascript dynamiques utilisant des éléments <code class="highlighter-rouge">&lt;div&gt;</code> ou <code class="highlighter-rouge">&lt;span&gt;</code>. La spécification ARIA permet alors d’associer un composant à un autre et de créer une étiquette conforme. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Exemple avec un intitulé visible --&gt;
+&lt;p id="prenom"&gt;Votre prénom&lt;/p&gt;
+&lt;input type="text" aria-labelledby="prenom" /&gt;
+
+&lt;!-- Exemple avec un intitulé invisible --&gt;
+&lt;input type="text" aria-label="Prénom" /&gt;
+</code></pre></div></div>
+
+<p>Cependant, ce type d’implémentation ne fournira une indication de labellisation qu’aux technologies d’assistance, et pas à tous les internautes. D’autre part, l’attribut <code class="highlighter-rouge">aria-labelledby</code> remplace toute autre relation existante : à cause de la priorité de restitution, les étiquettes réalisées avec une balise <code class="highlighter-rouge">&lt;label&gt;</code> ou un attribut <code class="highlighter-rouge">aria-label</code> ou <code class="highlighter-rouge">title</code> seront ignorées. Voici un exemple tiré de l’article <a href="https://disic.github.io/guide-integrateur/6-formulaires.html">Formulaires<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide de l’intégrateur :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label for="jfname"&gt;Votre nom de jeune fille&lt;/label&gt;
+&lt;input id="jfname" type="text" aria-labelledby="name" /&gt;
+&lt;p id="name"&gt;Votre nom&lt;/p&gt;
+</code></pre></div></div>
+
+<p>Ici, le lecteur d’écran restituera l’étiquette <code class="highlighter-rouge">Votre nom</code>, l’étiquette <code class="highlighter-rouge">Votre nom de jeune fille</code> sera ignorée.</p>
+
+<h3 id="accoler-visuellement-létiquette-à-son-champ">Accoler visuellement l’étiquette à son champ</h3>
+<p>Il est important d’accoler visuellement l’étiquette au champ associé, <strong>afin que l’internaute puisse facilement faire le lien entre les deux</strong>.</p>
+
+<p>Cette recommandation est particulièrement importante pour les internautes se servant d’une loupe d’écran ou du zoom : <strong>si une étiquette est trop éloignée de son champ, l’internaute la perdra de vue et ne saura pas quel champ il ou elle remplit</strong>.</p>
+
+<p>En général, on positionne l’étiquette juste au-dessus du champ, à gauche pour les langues qui s’affichent de gauche à droite, à droite pour les langues qui s’affichent de droite à gauche. Il est aussi possible d’accoler l’étiquette juste à côté du formulaire, à condition que l’intitulé ne soit pas trop long.</p>
+
+<h3 id="utiliser-lattribut-placeholder-avec-parcimonie">Utiliser l’attribut <code class="highlighter-rouge">placeholder</code> avec parcimonie</h3>
+<p>L’attribut <code class="highlighter-rouge">placeholder</code> est fréquemment utilisé dans la conception des formulaires : considéré plus esthétique, il permet notamment d’alléger un formulaire en affichant du texte par défaut dans un champ. Ce texte s’effacera dès lors que internaute commencera à saisir du contenu dans le champ en question. Si l’utilisation du <code class="highlighter-rouge">placeholder</code> n’est pas interdite, elle est toutefois soumise à certaines conditions.</p>
+
+<p><strong>L’attribut <code class="highlighter-rouge">placeholder</code> ne doit pas être utilisé à la place d’une étiquette de champ</strong>. En effet le W3C (World Wide Web Consortium) précise bien <q> <span lang="en">The placeholder attribute should not be used as an alternative to a label</span> </q>. <strong>L’attribut <code class="highlighter-rouge">placeholder</code> ne doit pas fournir d’informations essentielles, qui doivent être données par des étiquettes disponibles en permanence</strong>. Un mauvaise utilisation du <code class="highlighter-rouge">placeholder</code> peut entraîner plusieurs problèmes :</p>
+<ul>
+  <li>
+    <p>fournir des informations sur la nature ou la fonction du champ dans un placeholder, sans autre étiquette, peut être particulièrement frustrant pour l’internaute car ces informations disparaîtront dès lors qu’il ou elle commencera à remplir le champ</p>
+  </li>
+  <li>
+    <p>les technologies d’assistance ne restituent pas toutes de manière uniforme cet attribut</p>
+  </li>
+  <li>
+    <p>la couleur par défaut du <code class="highlighter-rouge">placeholder</code> n’est pas suffisamment contrastée</p>
+  </li>
+</ul>
+
+<p><strong>Le <code class="highlighter-rouge">placeholder</code> doit donc fournir uniquement des exemples de valeur ou de saisie facultatives, en complément des informations essentielles données par les étiquettes</strong>. Voici un exemple tiré de l’article <a href="https://blog.atalan.fr/placeholder-et-accessibilite/">Placeholder et accessibilité<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du blog d’Atalan :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label for="sports"&gt;Votre sport préféré&lt;/label&gt;
+&lt;input type="text" id="sports" placeholder="Football, Tennis, Rugby..."&gt;
+</code></pre></div></div>
+
+<p>Implémenté de cette manière, et en corrigeant son contraste pour le rendre plus accessible, le placeholder peut être utilisé dans les formulaires.</p>
+
+<p>Le blog d’Atalan évoque également la technique du placeholder “simulé” consistant à superposer une balise <code class="highlighter-rouge">&lt;label&gt;</code> visuellement sur le champ.</p>
+:ET
