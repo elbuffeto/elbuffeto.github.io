@@ -1,0 +1,28 @@
+I"�<p>Comment masquer des éléments de manière accessible ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Attributs_universels/hidden">L’attribut <code class="highlighter-rouge">hidden</code><span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+  <li>lire l’article <a href="https://www.ffoodd.fr/cache-cache-css/">Cache-cache CSS<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Gaël Poupard</li>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/exemples/masquage/index.html">Masquer des éléments de manière accessible<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire l’article <a href="https://www.anysurfer.be/fr/en-pratique/sites-web/cacher-du-texte">Cacher du texte<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’AnySurfer</li>
+  <li>lire l’article <a href="https://www.lelutinduweb.fr/alternatives-textuelles-texte-masque-css/">Le vaste monde des alternatives textuelles : le texte masqué en CSS (5/6)<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Julie Moynat</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<p>Les formulaires sont à mon sens un des éléments les plus complexes à mettre en oeuvre sur un site web. Qui ne s’est pas déjà retrouvé en difficulté à remplir un formulaire ? :</p>
+<ul>
+  <li>“Dois-je indiquer mon nom et mon prénom sur ce champ, ou juste mon nom ?”</li>
+  <li>“Dans quel format dois-je donner cette date ?”</li>
+  <li>“Pourquoi ma validation ne marche pas ? J’ai beau cliquer sur le bouton, il ne se passe rien !”
+Nous avons tous et toutes déjà vécu ces situations et maudit sur plusieurs générations</li>
+</ul>
+
+<p>Formulaire = élément complexe à mettre en oeuvre.</p>
+
+<p>Etiquettes de formulaires
+être pertinente
+être correctement reliée (visuellement et dans le code)
+Labels implicites
+Placeholders</p>
+:ET
