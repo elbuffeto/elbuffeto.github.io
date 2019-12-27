@@ -1,0 +1,116 @@
+I"�"<p>Construire des formulaires accessibles en structurant correctement les informations.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://disic.github.io/guide-integrateur/6-formulaires.html">Formulaires<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide de l’intégrateur</li>
+  <li>lire l’article <a href="https://disic.github.io/guide-concepteur/3-formulaires.html">Formulaires<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide du concepteur</li>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/inc-dev-etiquette-formulaires.html">Rendre accessible les champs de formulaire<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire l’article <a href="https://www.opquast.com/20170131placeholder-attribut-maudit/">Placeholder, l’attribut maudit<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Laurent Denis</li>
+  <li>lire l’article <a href="https://blog.atalan.fr/placeholder-et-accessibilite/">Placeholder et accessibilité<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du blog d’Atalan</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<p>Structurer l’information permet d’avoir une meilleure compréhension du formulaire et donc de le remplir plus facilement.</p>
+
+<h3 id="regrouper-les-champs-de-même-nature">Regrouper les champs de même nature</h3>
+<p>Il s’agit ici de se conformer aux critères 11.5, 11.6 et 11.7 du RGAA (Référentiel Général d’Amélioration de l’Accessibilité) :</p>
+
+<blockquote>
+  <p>Critère 11.5. Dans chaque formulaire, les champs de même nature sont-ils regroupés, si nécessaire ?</p>
+</blockquote>
+
+<blockquote>
+  <p>Critère 11.6. Dans chaque formulaire, chaque regroupement de champs de formulaire a-t-il une légende ?</p>
+</blockquote>
+
+<blockquote>
+  <p>Critère 11.7. Dans chaque formulaire, chaque légende associée à un regroupement de champs de même nature est-elle pertinente ?</p>
+</blockquote>
+
+<p><strong>Par “champs de même nature”, on entend les champs du même type, par exemple une liste de boutons radio ou de cases à cocher, ou des groupes de champs possédant des intitulés identiques</strong>.</p>
+
+<p>Par exemple, dans un formulaire d’achat en ligne, il est demandé de renseigner une adresse de livraison et une adresse de facturation. Ces deux adresses possèdent des champs avec des intitulés similaires (nom, prénom, numéro de rue, code postal, ville…), il est donc nécessaire de regrouper chacun de ces champs afin que l’internaute comprenne bien quelle adresse il ou elle est en train de remplir.</p>
+
+<p>En revanche, si un formulaire est relativement long mais que les champs ne possèdent pas d’intitulés identiques, il suffit de structurer le formulaire avec des balises <code class="highlighter-rouge">&lt;h1&gt;</code> à <code class="highlighter-rouge">&lt;h6&gt;</code>.</p>
+
+<figure role="group">
+  <img src="../images/posts/form-1.png" alt="Exemple de formulaire structuré en plusieurs parties" />
+  <figcaption>Capture d'écran d'un formulaire structuré en plusieurs parties (Informations de l'adresse et Numéros de téléphone). Ces différentes parties sont structurées à l'aide de titres car il ne s'agit pas d'informations de même type ou de même nature.</figcaption>
+</figure>
+
+<h4 id="regrouper-avec-les-balises-fieldset-et-legend">Regrouper avec les balises <code class="highlighter-rouge">&lt;fieldset&gt;</code> et <code class="highlighter-rouge">&lt;legend&gt;</code></h4>
+<p>Les champs doivent être regroupés à l’aide des balises <code class="highlighter-rouge">&lt;fieldset&gt;</code> et <code class="highlighter-rouge">&lt;legend&gt;</code>. Si nous reprenons l’exemple des adresses de livraison et facturation, cela donne :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;fieldset&gt;
+  &lt;legend&gt;Adresse de livraison&lt;/legend&gt;
+
+  &lt;label for="prenom-1"&gt;Prénom&lt;/label&gt;
+  &lt;input type="text" id="prenom-1" /&gt;
+
+  &lt;label for="nom-1"&gt;Nom&lt;/label&gt;
+  &lt;input type="text" id="nom-1" /&gt;
+
+  &lt;label for="rue-1"&gt;Rue&lt;/label&gt;
+  &lt;input type="text" id="rue-1" /&gt;
+  [...]
+&lt;/fieldset&gt;
+&lt;fieldset&gt;
+  &lt;legend&gt;Adresse de facturation&lt;/legend&gt;
+
+  &lt;label for="prenom-2"&gt;Prénom&lt;/label&gt;
+  &lt;input type="text" id="prenom-2" /&gt;
+
+  &lt;label for="nom-2"&gt;Nom&lt;/label&gt;
+  &lt;input type="text" id="nom-2" /&gt;
+
+  &lt;label for="rue-2"&gt;Rue&lt;/label&gt;
+  &lt;input type="text" id="rue-2" /&gt;
+  [...]
+&lt;/fieldset&gt;
+</code></pre></div></div>
+
+<p>Voici également un exemple avec une liste de boutons radio :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;fieldset&gt;
+  &lt;legend&gt;Quel est votre moyen de transport quotidien ?&lt;/legend&gt;
+
+  &lt;input type="radio" id="velo"/&gt;
+  &lt;label for="velo"/&gt;Le vélo&lt;/label&gt;
+
+  &lt;input type="radio" id="commun"/&gt;
+  &lt;label for="commun"/&gt;Les transports en commun&lt;/label&gt;
+
+  &lt;input type="radio" id="marche"/&gt;
+  &lt;label for="marche"/&gt;La marche à pied&lt;/label&gt;
+&lt;/fieldset&gt;
+</code></pre></div></div>
+
+<h4 id="les-autres-formes-de-regroupement">Les autres formes de regroupement</h4>
+<p><strong>Il est également possible de regrouper les champs de même nature dans une balise possédant un <code class="highlighter-rouge">role="group"</code></strong>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div role="group" aria-labelledby="livraison-entete"&gt;
+	&lt;div id="livraison-entete"&gt;Adresse de livraison :&lt;/div&gt;
+
+  &lt;div&gt;
+		&lt;label for="livraison-nom"&gt;Nom&lt;/label&gt;
+		&lt;input type="text" name="livraison-nom" id="livraison-nom"&gt;
+	&lt;/div&gt;
+	[...]
+&lt;/div&gt;
+&lt;div role="group" aria-labelledby="facturation-entete"&gt;
+	&lt;div id="facturation-entete"&gt;Adresse de facturation&lt;/div&gt;
+
+	&lt;div&gt;
+		&lt;label for="facturation-nom"&gt;Nom&lt;/label&gt;
+		&lt;input type="text" name="facturation-nom" id="facturation-nom"&gt;
+	&lt;/div&gt;
+	[...]
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p>Dans cet exemple, l’élément <code class="highlighter-rouge">&lt;div&gt;</code> a un <code class="highlighter-rouge">role="group"</code> qui permet de regrouper les champs de même nature et l’attribut <code class="highlighter-rouge">aria-labelledby</code> associé à son <code class="highlighter-rouge">id</code> correspondant désigne l’intitulé du groupe de champs.</p>
+
+<h3 id="structurer-les-listes-de-choix">Structurer les listes de choix</h3>
+
+<h3 id="les-étapes-dun-formulaire">Les étapes d’un formulaire</h3>
+:ET
