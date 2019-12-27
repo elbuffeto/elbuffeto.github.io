@@ -1,0 +1,129 @@
+I"�)<p>Construire des formulaires accessibles en structurant correctement les informations.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://disic.github.io/guide-integrateur/6-formulaires.html">Formulaires<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide de l’intégrateur</li>
+  <li>lire l’article <a href="https://disic.github.io/guide-concepteur/3-formulaires.html">Formulaires<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide du concepteur</li>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/exemples/formulaire/index.html">Exemple de formulaire accessible<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire la notice <a href="https://www.accede-web.com/notices/html-css-javascript/7-formulaires/7-9-identifier-letape-courante-des-formulaires-a-etapes-multiples-avec-aria-currentstep/">Identifier l’étape courante des formulaires à étapes multiples avec aria-current=”step”<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’AcceDe Web</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="les-aides-à-la-saisie">Les aides à la saisie</h3>
+<p>Parfois, certains formats spécifiques sont attendus à la saisie. Par exemple : une date de naissance au format jj/mm/aaaa, ou le poids maximal d’un fichier à envoyer. Il est important d’indiquer les formats attendus à l’internaute afin de limiter les risques d’erreur et la frustration.</p>
+
+<h4 id="directement-dans-létiquette-du-champ">Directement dans l’étiquette du champ</h4>
+<p>La solution la plus simple est d’ajouter directement ces indications dans l’étiquette du champ concerné, c’est à dire dans la balise <code class="highlighter-rouge">&lt;label&gt;</code>. Elles seront ainsi accessibles à tous les utilisateurs et toutes les utilisatrices. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label for="date"&gt;Date de naissance (au format jj/mm/aaaa)&lt;/label&gt;
+&lt;input id="date" type="date" /&gt;
+</code></pre></div></div>
+
+<h4 id="avec-aria-describedly">Avec <code class="highlighter-rouge">aria-describedly</code></h4>
+<p>Parfois, pour des raisons graphiques ou de mise en page, il n’est pas possible d’intégrer les aides à la saisie dans l’étiquette du champ. Dans ce cas, il est possible de recourir à l’attribut ARIA (<span lang="en">Accessible Rich Internet Applications</span>) <code class="highlighter-rouge">aria-describedly</code>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label for="date"&gt;Date de naissance&lt;/label&gt;
+&lt;input type="date" id="date" aria-describedly="format" /&gt;
+&lt;p id='format'&gt;Format attendu : jj/mm/aaaa&lt;/p&gt;
+</code></pre></div></div>
+
+<h4 id="avec-lattribut-title">Avec l’attribut <code class="highlighter-rouge">title</code></h4>
+<p>Enfin, en dernier recours, il est possible d’utiliser l’attribut <code class="highlighter-rouge">title</code>, mais qui ne sera malheureusement pas disponible pour tous les internautes. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label for="date" title="au format jj/mm/aaaa"&gt;Date de naissance&lt;/label&gt;
+&lt;input type="date" id="date" /&gt;
+</code></pre></div></div>
+
+<h3 id="les-champs-obligatoires">Les champs obligatoires</h3>
+<p>Outre les formats spécifiques attendus, il est important d’informer l’internaute sur le caractère obligatoire ou non de certains champs. La nature obligatoire du champ peut être indiquée de différentes manières :</p>
+<ul>
+  <li>directement dans l’étiquette</li>
+  <li>dans le code du champ</li>
+</ul>
+
+<h4 id="indication-dans-létiquette">Indication dans l’étiquette</h4>
+<p>Le champ obligatoire peut être signalé par un signe distinctif (un pictogramme, une image…) ou par une mention textuelle directement dans la balise <code class="highlighter-rouge">&lt;label&gt;</code>. Il est nécessaire de préciser au début du formulaire que le pictogramme ou l’image employée signale un champ obligatoire.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Exemple avec une mention textuelle --&gt;
+&lt;label for="prenom"&gt;Votre prénom (champ obligatoire)&lt;/label&gt;
+&lt;input type="text" id="prenom" /&gt;
+
+&lt;!-- Exemple avec un pictogramme --&gt;
+&lt;p&gt;Les champs obligatoires sont signalés par le symbole *&lt;/p&gt;
+&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+&lt;input type="text" id="prenom" /&gt;
+</code></pre></div></div>
+
+<h4 id="indication-dans-le-code">Indication dans le code</h4>
+<p>Les champs obligatoires peuvent aussi être indiqués dans le code grâce à l’attribut <code class="highlighter-rouge">required</code> ou à l’attribut ARIA <code class="highlighter-rouge">aria-required</code>. Ces attributs seront bien restitués par un lecteur d’écran. En revanche, il est nécessaire de doubler cette information d’une alternative visible pour tous les internautes.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Exemple avec `required` --&gt;
+&lt;p&gt;Les champs obligatoires sont signalés par le symbole *&lt;/p&gt;
+&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+&lt;input type="text" id="prenom" required /&gt;
+
+&lt;!-- Exemple avec `aria-required` --&gt;
+&lt;p&gt;Les champs obligatoires sont signalés par le symbole *&lt;/p&gt;
+&lt;label for="prenom"&gt;Votre prénom *&lt;/label&gt;
+&lt;input type="text" id="prenom" aria-required="true" /&gt;
+</code></pre></div></div>
+
+<h3 id="contrôle-de-saisie">Contrôle de saisie</h3>
+<p>Une fois le formulaire rempli et envoyé par l’internaute, il peut arriver que des erreurs soient présentes : des champs obligatoires non remplis ou des formats de données non respectés par exemple. Ces erreurs peuvent être signalées de différentes manières :</p>
+<ul>
+  <li>sous forme de liste, avant le formulaire</li>
+  <li>directement dans l’étiquette du champ</li>
+  <li>à proximité de chaque champ comportant une erreur</li>
+</ul>
+
+<p>En complément, il est également possible d’indiquer les erreurs avec la propriété <code class="highlighter-rouge">aria-invalid="true"</code>. Mais cette propriété ne peut être utilisée seule, il est nécessaire de lui ajouter une alternative visible pour tous les internautes.</p>
+
+<h4 id="une-liste-derreurs-avant-le-formulaire">Une liste d’erreurs avant le formulaire</h4>
+<p>Cette liste d’erreurs située avant le formulaire doit respecter certaines règles :</p>
+<ul>
+  <li>elle doit être située avant la balise <code class="highlighter-rouge">&lt;form&gt;</code></li>
+  <li>elle doit donner le nombre total d’erreurs</li>
+  <li>chaque erreur doit avoir un lien vers le champ erroné</li>
+</ul>
+
+<p>Les recommandations d’accessibilité d’Orange préconisent également d’utiliser le <code class="highlighter-rouge">role="alert"</code> afin de notifier directement les erreurs aux utilisateurs et utilisatrices de technologies d’assistance. Le RGAA recommande également, en cas d’erreur de saisie, de proposer des exemples facililant la correction.</p>
+
+<p>Voici un exemple de liste d’erreurs précédent un formulaire :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div role="alert"&gt;
+  &lt;h2&gt;Deux erreurs sont présentes dans le formulaire&lt;/h2&gt;
+  &lt;ul&gt;
+    &lt;li&gt;
+      &lt;a href="#prenom" id="prenom_erreur"&gt;
+        Le champ "Prénom" est obligatoire, veuillez le remplir.
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;a href="#date" id="date_erreur"&gt;
+      Le champ "Date de naissance" doit respecter le format jj/mm/aaaa, par exemple : 18/10/1989.
+      &lt;/a&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;  
+
+&lt;form&gt;
+  &lt;label for="prenom"&gt;Votre prénom (champ obligatoire)&lt;/label&gt;
+  &lt;input type="text" id="prenom" /&gt;
+
+  &lt;label for="date"&gt;Date de naissance (au format jj/mm/aaaa)&lt;/label&gt;
+  &lt;input id="date" type="date" /&gt;
+&lt;/form&gt;   
+</code></pre></div></div>
+
+<h4 id="directement-dans-létiquette-du-champ-1">Directement dans l’étiquette du champ</h4>
+<p>Le message d’erreur et la suggestion de corrections peuvent être intégrés directement dans la balise <code class="highlighter-rouge">&lt;label&gt;</code>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label for="date"&gt;
+   Votre date de naissance
+   &lt;span class="error"&gt;Veuillez renseigner votre date de naissance, au format jj/mm/aaaa, par exemple : 18/10/1989.&lt;/span&gt;
+&lt;/label&gt;
+&lt;input type="date" id="date" aria-invalid="true" /&gt;
+</code></pre></div></div>
+
+<h4 id="a-proximité-du-champ-erroné">A proximité du champ erroné</h4>
+:ET
