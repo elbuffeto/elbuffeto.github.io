@@ -1,0 +1,23 @@
+I"1<p>Synthétiser sous forme de tableau les recommandations d’accessibilité relatives aux médias.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>réviser et appliquer les recommandations de tableaux de données accessibles</li>
+  <li>créer un tableau HTML (HyperText Markup Language) récapitulatif des différents médias et de leurs alternatives accessibles</li>
+</ul>
+
+<p>Le tableau est disponible sur Codepen : <a href="https://codepen.io/lolovelo/pen/jOEGraK">Tableau récapitulatif des moyens techniques pour rendre des médias accessibles<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a></p>
+
+<p>L’objectif était d’avoir une vision d’ensemble des solutions techniques appliquées à chaque type de médias. Je me suis basée sur le Référentiel Général d’Amélioration de l’Accessibilité (RGAA) mais j’ai tenu à intégrer également les solutions évoquées par les WCAG (<span lang="en">Web Content Accessibility Guidelines</span>).</p>
+
+<p>Les solutions ne relevant pas du RGAA sont signalées par des étiquettes auxquelles correspond la légende appropriée (reliée par un attribut <code class="highlighter-rouge">aria-labelledby</code>) :</p>
+<ul>
+  <li>alternative évoquée uniquement dans les WCAG (Web Content Accessibility Guidelines)</li>
+  <li>alternative exemptée par la directive européenne</li>
+</ul>
+
+<p>Par manque de temps, je n’ai pas testé le rendu de ce tableau avec un lecteur d’écran mais c’est l’objectif pour le prochain article.</p>
+
+<p>N’hésitez pas à me faire des retours ou suggestions sur ce tableau, si quelque chose n’est pas clair ou si vous pensez à des améliorations !</p>
+
+:ET
