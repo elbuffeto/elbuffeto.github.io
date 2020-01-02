@@ -1,0 +1,72 @@
+I"�#<p>Beaucoup de vocabulaire et de définitions dans ce premier article concernant les médias accessibles.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/others/video-audio.html">Recommandations accessibilité des contenus vidéos, animations et audios<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire l’article <a href="https://toscaconsultants.fr/accessibilite-numerique/referentiel-technique/multimedia">Multimédia<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Tosca Consultants</li>
+  <li>lire l’article <a href="https://www.24joursdeweb.fr/2019/comment-bien-sous-titrer-les-videos/">Comment bien sous-titrer les vidéos ?<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Emmanuelle Aboaf</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="identifier-les-médias-temporels">Identifier les médias temporels</h3>
+<p>Chaque média temporel intégré dans une page doit pouvoir être clairement identifié. Par exemple : <strong>un titre ou un texte adjacent explicite la nature et la fonction du média</strong>. L’absence d’identification peut en effet se révéler très problématique pour les personnes mal-voyantes ou aveugles. Imaginons une page contenant une dizaine de vidéos et un internaute à la recherche d’une vidéo spécifique : en l’absence d’intitulé pour chacune d’elle, l’internaute se verra dans l’obligation de lancer les vidéos une à une pour trouver celle qu’il recherche.</p>
+
+<p>Sur la page <a href="https://www.w3.org/WAI/perspective-videos/contrast/" hreflang="en" lang="en">Colors with good contrast<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du W3C (<span lang="en">World Wide Web Consortium</span>), la vidéo relative à l’article possède un titre visuellement caché mais accessible aux technologies d’assistance :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 id="film" class="no-display"&gt;Video on Colors with Good Contrast&lt;/h2&gt;
+</code></pre></div></div>
+
+<h3 id="fournir-une-alternative-aux-médias-non-temporels">Fournir une alternative aux médias non temporels</h3>
+<p>Les médias non temporels insérés via une balise <code class="highlighter-rouge">&lt;object&gt;</code>, <code class="highlighter-rouge">&lt;embed&gt;</code>, <code class="highlighter-rouge">&lt;video&gt;</code>, <code class="highlighter-rouge">&lt;audio&gt;</code>, <code class="highlighter-rouge">&lt;svg&gt;</code> ou <code class="highlighter-rouge">&lt;canvas&gt;</code> possèdent une alternative. Cette alternative peut être accessible via un lien ou un bouton adjacent. L’alternative peut se situer dans la page elle-même (le lien sera alors une ancre), ou dans une autre page. Les conditions suivantes doivent être respectées :</p>
+<ul>
+  <li>le lien (ou bouton) adjacent doit être accessible</li>
+  <li>l’alternative doit être accessible</li>
+  <li>l’alternative doit permettre d’accéder aux mêmes contenus ou fonctionnalités, de réaliser les mêmes actions</li>
+</ul>
+
+<p>Par exemple, prenons le cas d’un graphique représenté dans une balise <code class="highlighter-rouge">&lt;canvas&gt;</code>. Une alternative possible serait un tableau en HTML (<span lang="en">HyperText Markup Language</span>) reprenant les données représentées. C’est une des solutions proposées par <a href="http://filamentgroup.github.io/jQuery-Visualize/" hreflang="en">Canvas Charts<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> qui génère ses graphiques à partir de tableaux HTML, les rendant ainsi accessibles.</p>
+
+<h3 id="contrôle-des-médias">Contrôle des médias</h3>
+<h4 id="pas-de-déclenchement-automatique">Pas de déclenchement automatique</h4>
+<p><strong>Il est important de laisser à l’internaute le contrôle d’un média intégré dans une page</strong>. Le lancement automatique est souvent une source de frustration pour bon nombre d’internautes et peut causer de réelles difficultés à certains utilisateurs et utilisatrices. Par exemple : une personne aveugle ou mal-voyante naviguant sur une page où le son d’un média se déclenche automatiquement au chargement aura des difficultés à entendre le son de la synthèse vocale en parallèle.</p>
+
+<p>Le RGAA (Référentiel Général d’Amélioration de l’Accessibilité) recommande ainsi que chaque contenu en mouvement ou clignotant soit contrôlable par l’internaute. On retiendra donc les points suivants :</p>
+<ul>
+  <li>
+    <p><strong>les fichiers audio d’une durée supérieure à 3 secondes ne doivent pas se déclencher automatiquement</strong></p>
+  </li>
+  <li>
+    <p><strong>les fichiers vidéo d’une durée supérieure à 5 secondes ne doivent pas se déclencher automatiquement</strong></p>
+  </li>
+  <li>
+    <p><strong>les fichiers vidéo ne doivent pas contenir de séquence flashant plus de 3 fois par secondes</strong> : en 1997, la diffusion de l’épisode “Le Soldat ordinateur Porygon” de la série animée Pokémon a provoqué des crises d’épilepsie entraînant l’admission de plus de 150 enfants à l’hôpital (voir à ce sujet l’article <a href="https://fr.wikipedia.org/wiki/Denn%C5%8D_Senshi_Porigon">Dennō Senshi Porigon<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Wikipédia )</p>
+  </li>
+</ul>
+
+<h4 id="un-menu-de-contrôle-accessible">Un menu de contrôle accessible</h4>
+<p><strong>L’internaute doit avoir la possibilité de contrôler le média avec son clavier et tout dispositif de pointage</strong> (avec la souris ou le touch). Le média doit :</p>
+<ul>
+  <li>
+    <p><strong>être accessible et donc recevoir un focus visible</strong></p>
+  </li>
+  <li>
+    <p><strong>être activable</strong> : par exemple la touche “entrée” ou le clic permettent d’activer le bouton “Lecture”</p>
+  </li>
+</ul>
+
+<p>Pour les médias temporels, les fonctionnalités suivantes sont recquises à minima :</p>
+<ul>
+  <li>
+    <p>contrôle du flux vidéo ou audio grâce aux fonctionnalités lecture, pause ou stop</p>
+  </li>
+  <li>
+    <p>contrôle du niveau sonore (activation/désactivation, augmenter ou baisser) : le RGAA préconisait initialement un niveau sonore 20 décibels plus haut que celui de l’arrière plan mais ce critère AAA a été abandonnée dans la version 4</p>
+  </li>
+  <li>
+    <p>activation et désactivation de l’affichage des sous-titres</p>
+  </li>
+  <li>
+    <p>activation et désactivation de l’audio-description</p>
+  </li>
+</ul>
+:ET
