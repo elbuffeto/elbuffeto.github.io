@@ -1,0 +1,18 @@
+I"�
+<p>Comment laisser à l’internaute le contrôle de chaque limite de temps modifiant le contenu ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://www.nextinpact.com/news/82418-rafraichissement-automatique-pages-quel-interet-et-quel-impact.htm">Rafraichissement automatique des pages : quel intérêt et quel impact ?<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Next Inpact</li>
+  <li>lire l’article <a href="https://toscaconsultants.fr/accessibilite-numerique/referentiel-technique/consultation">Consultation<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Tosca Consultants</li>
+  <li>lire la bonne pratique <a href="https://checklists.opquast.com/fr/qualiteweb/le-site-nimpose-pas-de-redirection-ou-de-rafraichissement-automatique-cote-client">Le site n’impose pas de redirection ou de rafraîchissement automatique côté client<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Opquast</li>
+  <li>lire le chapitre “Consultation” du livre “Accessibilité web: Normes et bonnes pratiques pour des sites plus accessibles” d’Armony Altinier</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<p>Nous nous intéressons au premier critère du RGAA (Référentiel Général d’Amélioration de l’Accessibilité) relatif à la consultation :</p>
+
+<blockquote>
+  <p>Critère 13.1. Pour chaque page web, l’utilisateur a-t-il le contrôle de chaque limite de temps modifiant le contenu (hors cas particuliers) ?</p>
+</blockquote>
+:ET

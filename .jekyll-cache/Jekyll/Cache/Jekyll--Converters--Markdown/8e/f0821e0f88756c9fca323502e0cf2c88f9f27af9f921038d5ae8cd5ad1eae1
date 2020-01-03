@@ -1,0 +1,76 @@
+I";"<p>Comment laisser à l’internaute le contrôle de chaque limite de temps modifiant le contenu ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://www.nextinpact.com/news/82418-rafraichissement-automatique-pages-quel-interet-et-quel-impact.htm">Rafraichissement automatique des pages : quel intérêt et quel impact ?<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Next Inpact</li>
+  <li>lire l’article <a href="https://toscaconsultants.fr/accessibilite-numerique/referentiel-technique/consultation">Consultation<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Tosca Consultants</li>
+  <li>lire la bonne pratique <a href="https://checklists.opquast.com/fr/qualiteweb/le-site-nimpose-pas-de-redirection-ou-de-rafraichissement-automatique-cote-client">Le site n’impose pas de redirection ou de rafraîchissement automatique côté client<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Opquast</li>
+  <li>lire le chapitre “Consultation” du livre “Accessibilité web: Normes et bonnes pratiques pour des sites plus accessibles” d’Armony Altinier</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="rafraîchissement-et-redirection-automatique">Rafraîchissement et redirection automatique</h3>
+<p>Nous nous intéressons au premier critère du RGAA (Référentiel Général d’Amélioration de l’Accessibilité) relatif à la consultation :</p>
+
+<blockquote>
+  <p>Critère 13.1. Pour chaque page web, l’utilisateur a-t-il le contrôle de chaque limite de temps modifiant le contenu (hors cas particuliers) ?</p>
+</blockquote>
+
+<h4 id="définitions">Définitions</h4>
+<p>Ce critère concerne <strong>les procédés de rafraîchissement et les redirections automatiques</strong>. Le glossaire du RGAA donne les définitions suivantes :</p>
+
+<dl>
+   <dt><dfn>Procédé de rafraîchissement</dfn></dt>
+   <dd>Technique visant à modifier le contenu d’un ou de plusieurs éléments de la page web. Le procédé de rafraîchissement peut s’effectuer par rechargement automatique de la page ou de manière dynamique sans rechargement de la page (via AJAX, par exemple).</dd>
+   <dt><dfn>Redirection</dfn></dt>
+   <dd>Procédé qui consiste pour l’affichage d’une page sur le poste client à rediriger l’utilisateur vers une autre page, sur le même domaine ou sur un domaine différent.</dd>
+</dl>
+
+<p><strong>Exemple de rafraîchissement</strong> : des sites d’actualités rafraîchissent automatiquement leur page d’accueil au bout de quelques minutes pour actualiser les articles présents dans la page.</p>
+
+<p><strong>Exemple de redirection</strong> : lors d’un achat en ligne, au moment de payer l’internaute est dirigé sur le site de sa banque. Il effectue le paiement, la confirmation s’affiche et au bout de quelques secondes il est à nouveau redirigé sur le site initial de la commande.</p>
+
+<h4 id="problèmes-rencontrés">Problèmes rencontrés</h4>
+<p>Ces procédés peuvent se révéler particulièrement problématiques pour les utilisatrices et les utilisateurs.</p>
+
+<p><strong>Le rafraîchissement automatique est par exemple susceptible d’interrompre le visionnage d’une vidéo, l’écriture d’un long commentaire ou la lecture d’un article, ce qui peut être une grande source de frustration.</strong> Dans son article <a href="https://www.nextinpact.com/news/82418-rafraichissement-automatique-pages-quel-interet-et-quel-impact.htm">Rafraichissement automatique des pages : quel intérêt et quel impact ?<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>, Next Inpact explique que suite à la mise en place d’un test de rafraîchissement automatique sur leur site, ils ont reçu en très peu de temps de nombreuses plaintes de leurs lectrices et lecteurs :</p>
+
+<blockquote>
+  <p>En moins d’une heure, nous étions interpellés dans les commentaires, par mail, ou sur Twitter par des lecteurs qui se plaignaient. La raison ? Surtout l’impossibilité d’écrire sereinement des commentaires ou de lire des contenus longs.</p>
+</blockquote>
+
+<p>Opquast évoque également <strong>un surcroît non désiré de coût d’utilisation des données mobiles et des internautes pénalisés lorsque la qualité du réseau est variable</strong>.</p>
+
+<p>D’autre par, <strong>les utilisateurs et utilisatrices utilisant des lecteurs d’écran verront leur navigation interrompue</strong>, entraînant une perte d’information en cours de lecture.</p>
+
+<p>Enfin, le rafraichissement automatique permet de gonfler de manière artificielle le nombre de pages vues afin de donner plus de visibilité aux publicités par exemple. Mais contrairement aux idées reçues, il ne permet pas de générer plus de revenus et provoque même une baisse du taux de clic sur les publicités concernées.</p>
+
+<p><strong>La redirection automatique, quant à elle, laisse souvent peu de temps à l’internaute, par exemple pour vérifier le détail d’une transaction et imprimer la confirmation d’achat</strong>. Des troubles cognitifs ou l’utilisation d’un lecteur d’écran peuvent allonger la lecture d’une page ou même des interruptions externes comme un téléphone qui sonne. Résultat, l’internaute se retrouve redirigé sans avoir eu le temps de lire le contenu de l’écran précédent.</p>
+
+<h3 id="laisser-le-contrôle-à-linternaute">Laisser le contrôle à l’internaute</h3>
+<p>Le RGAA préconise de fournir à l’internaute un moyen de contrôle sur les éventuels rafraîchissements automatiques et les redirections mis en place :</p>
+<ul>
+  <li>
+    <p>l’internaute peut empêcher et autoriser le rafraîchissement ou la redirection</p>
+  </li>
+  <li>
+    <p>l’internaute peut augmenter la limite de temps entre deux rafraîchissements ou redirections de dix fois au moins</p>
+  </li>
+  <li>
+    <p>l’internaute est averti·e de l’imminence du rafraîchissement ou de la redirection et dispose de vingt secondes au minimum pour augmenter la limite de temps</p>
+  </li>
+  <li>
+    <p>la limite de temps entre deux rafraîchissements ou redirections est d’au moin vingt heures</p>
+  </li>
+</ul>
+
+<p>L’un des procédés les plus employés pour le rafraichissement automatique est l’utilisation de la balise <code class="highlighter-rouge">&lt;meta&gt;</code> au début de chaque page, avec un nombre de secondes à attendre avant de la rafraîchir. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;meta http-equiv="refresh" content="300" /&gt;
+</code></pre></div></div>
+
+<p>Cette pratique laisse très peu de contrôle à l’internaute et est d’ailleurs proscrite par Opquast. Des scripts Javascript permettent de disposer d’une plus grande flexibilité en activant ou non le rafraîchissement si la lecture d’une vidéo est en cours ou si un formulaire de commentaire contient du texte, ou en laissant à l’internaute la possibilité de bloquer le processus.</p>
+
+<h3 id="exceptions-et-cas-particuliers">Exceptions et cas particuliers</h3>
+
+:ET

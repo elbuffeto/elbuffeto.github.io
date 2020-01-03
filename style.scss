@@ -58,12 +58,12 @@ h2 {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
 }
 
 h4 {
   color: $gray;
-  font-size: 1.8rem;
+  font-size: 2rem;
 }
 
 p {
@@ -466,6 +466,13 @@ table {
 		border: 1px solid $darkGray;
 		padding: .5rem;
 	}
+}
+
+dfn {
+  display: inline-block;
+  font-style: normal;
+  font-weight: bold;
+  margin: 1rem 0;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
