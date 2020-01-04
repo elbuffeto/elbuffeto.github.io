@@ -1,0 +1,35 @@
+I"�<p>Comment proposer au téléchargement des documents bureautiques accessibles ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://www.nextinpact.com/news/82418-rafraichissement-automatique-pages-quel-interet-et-quel-impact.htm">Rafraichissement automatique des pages : quel intérêt et quel impact ?<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Next Inpact</li>
+  <li>lire l’article <a href="https://toscaconsultants.fr/accessibilite-numerique/referentiel-technique/consultation">Consultation<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Tosca Consultants</li>
+  <li>lire la bonne pratique <a href="https://checklists.opquast.com/fr/qualiteweb/le-site-nimpose-pas-de-redirection-ou-de-rafraichissement-automatique-cote-client">Le site n’impose pas de redirection ou de rafraîchissement automatique côté client<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Opquast</li>
+  <li>lire le chapitre “Consultation” du livre “Accessibilité web: Normes et bonnes pratiques pour des sites plus accessibles” d’Armony Altinier</li>
+  <li>lire la page <a href="https://www.w3.org/Translations/NOTE-UNDERSTANDING-WCAG20-fr/time-limits-required-behaviors.html">Comprendre le Critère de Succès 2.2.1<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> des WCAG (<span lang="en">Web Content Accessibility Guidelines</span>)</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<p>Il est courant de proposer différents types de fichiers en téléchargement sur un site ou une application web : des documents bureautiques, des fichiers audio et vidéo, des images, des fichiers compressés… Dans cet article, je m’intéresse spécifiquement aux documents bureautiques.</p>
+
+<h3 id="rappel--indication-de-format-poids-et-langue">Rappel : indication de format, poids et langue</h3>
+<p>Dans un article précédent, j’avais évoqué la bonne pratique consistant à indiquer le format, le poids et la langue du fichier à télécharger. <strong>Il s’agit bien d’une bonne pratique et non d’une recommandation légale</strong>, ce critère ayant été supprimé dans la version 4 du RGAA (Référentiel Général d’Amélioration de l’Accessibilité. Pour plus d’informations à ce sujet, je vous invite à consulter mon article <a href="/100daysofa11y-day29/">Les fichiers à télécharger</a>.</p>
+
+<h3 id="des-documents-accessibles-en-téléchargement">Des documents accessibles en téléchargement</h3>
+<p>Nous nous intéressons donc aux critères d’accessibilité suivants :</p>
+
+<blockquote>
+  <p>Critère 13.3. Dans chaque page web, chaque document bureautique en téléchargement possède-t-il, si nécessaire, une version accessible (hors cas particuliers) ?</p>
+</blockquote>
+
+<blockquote>
+  <p>Critère 13.4. Pour chaque document bureautique ayant une version accessible, cette version offre-t-elle la même information ?</p>
+</blockquote>
+
+<h4 id="internautes-impactés">Internautes impactés</h4>
+<p>Les documents bureautiques proposés au téléchargement doivent donc être accessibles. Il est en effet dommage de faire des efforts pour coder un site web accessible mais dont les documents proposés au téléchargement se trouvent être des fichiers PDF (<span lang="en">Portable Document Format</span>) numérisés en tant qu’images, donc inexploitables par les technologies d’assistance.</p>
+
+<p>Les principaux utilisateurs impactés sont les internautes aveugles, mal-voyants ou ayant des difficultés de lecture, qui ne seront donc pas en mesure d’accéder à l’information.  <strong>Il est important de veiller à ce que les contenus d’un site soient accessibles, et pas uniquement le site en lui-même</strong>.</p>
+
+<h3 id="fournir-une-version-alternative-accessible">Fournir une version alternative accessible</h3>
+:ET
