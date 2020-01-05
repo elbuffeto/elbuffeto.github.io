@@ -1,0 +1,89 @@
+I"(<p>Proposer des émoticônes, des dessins ASCII ou du “leet speak” accessibles.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://access42.net/pdf-accessibilite?lang=fr">PDF et accessibilité : la fausse bonne idée<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Sylvie Duchateau</li>
+  <li>lire l’article <a href="https://disic.github.io/guide-contribuer_accessible/docs_telechargement.html">Documents en téléchargement<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide “Contribuer sur le Web de manière accessible”</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="définitions">Définitions</h3>
+<p>Nous nous intéressons aux critères d’accessibilité suivants :</p>
+
+<blockquote>
+  <p>Critère 13.5. Dans chaque page web, chaque contenu cryptique (art ASCII, émoticon, syntaxe cryptique) a-t-il une alternative ?</p>
+</blockquote>
+
+<blockquote>
+  <p>Critère 13.6. Dans chaque page web, pour chaque contenu cryptique (art ASCII, émoticon, syntaxe cryptique) ayant une alternative, cette alternative est-elle pertinente ?</p>
+</blockquote>
+
+<p>L’art ASCII (<span lang="en">American Standard Code for Information Interchange</span>) consiste à <strong>former des images à partir des lettres et caractères spéciaux contenus dans le code ASCII</strong>.</p>
+
+<p>Une des approches les plus simples de l’art ASCII consiste à combiner 2 ou 3 caractères pour exprimer une émotion en texte. Il s’agit des émoticônes, qui peuvent se lire comme du texte ou en penchant légèrement la tête à gauche. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Un sourire --&gt;
+:-)  ou  :)
+
+&lt;!-- Un clin d'oeil --&gt;
+;-)  ou  ;)
+
+&lt;!-- La fatigue ou l'exaspération --&gt;
+-_-"
+</code></pre></div></div>
+
+<p>On peut également réaliser <a href="https://fr.wikipedia.org/wiki/Art_ASCII#/media/Fichier:WP_logo_ASCII_art_7857_chars.png">des dessins entiers en ASCII<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>. Il y a quelques années, Biocoop avait mếme réalisé pour sa campagne éco-responsable un site web sur lequel toutes les photos et animations avaient été remplacées par des illustrations en ASCII. Vous pouvez encore consulter le site via <a href="https://web.archive.org/web/20170703190110/http://www.lacampagneresponsable.fr/" hreflang="en">les archives de la WayBack Machine<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>.</p>
+
+<p>La syntaxe cryptique se réfère quant à elle à des systèmes d’écriture utilisant de manière détournée les caractères usuels. Par exemple : <a href="https://fr.wikipedia.org/wiki/Langage_SMS">le langage SMS<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> ou <a href="https://fr.wikipedia.org/wiki/Leet_speak">le “leet speak”<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Langage SMS --&gt;
+à12C4 pour "A un de ces quatres"
+
+&lt;!-- Langage Leet Speak --&gt;
+Au5t1N r0xx0rz pour "Austin Rocks"
+</code></pre></div></div>
+
+<h3 id="défauts-daccessibilité">Défauts d’accessibilité</h3>
+<p>Ces contenus peuvent se révéler difficile à comprendre : d’une part car tout le monde n’est pas familier de ce type de langage, d’autre part car leur restitution par les technologies d’assistance est loin d’être optimale. Les principales personnes impactées sont les aveugles et mal-voyant·e·s utilisant des lecteurs d’écran et des synthèses vocales.</p>
+
+<p>A titre d’exemple, prenons le tweet de Mozilla Developper en date du 30 décembre 2019 (comme quoi l’art ASCII est loin d’être mort et enterré) :</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">┏━━┓┏━━┓┏━━┓┏━━┓<br />┗━┓┃┃┏┓┃┗━┓┃┃┏┓┃<br />┏━┛┃┃┃┃┃┏━┛┃┃┃┃┃<br /> DECADE OF SAFE AND OPEN WEB <br />┃┏━┛┃┃┃┃┃┏━┛┃┃┃┃<br />┃┗━┓┃┗┛┃┃┗━┓┃┗┛┃<br />┗━━┛┗━━┛┗━━┛┗━━┛</p>&mdash; Mozilla Developer (@mozhacks) <a href="https://twitter.com/mozhacks/status/1211607150830723073?ref_src=twsrc%5Etfw">December 30, 2019</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>Ce tweet dessine donc en langage ASCII le chiffre 2020. Je vous invite ensuite à regarder <a href="https://adrianroselli.com/wp-content/uploads/2018/01/2020-meme_VO-Safari-macOS.mp4" hreflang="en">cette vidéo d’Adrian Roselli<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> : il s’agit de la restitution de ce tweet par VoiceOver, restitution particulièrement fastidieuse et incompréhensible.</p>
+
+<p>Certains lecteurs d’écran en revanche ont une bonne prise en charge des émoticônes. En testant avec Talkback le rendu de l’émoticône <code class="highlighter-rouge">:(</code>, j’ai eu pour résultat <code class="highlighter-rouge">émoticône triste</code>. La restitution est donc correcte.</p>
+
+<h3 id="les-solutions-possibles">Les solutions possibles</h3>
+<p>Il est nécessaire de <strong>fournir la signification d’un contenu cryptique</strong>. Selon le RGAA (Référentiel Général d’Amélioration de l’Accessibilité), <strong>cette signification peut être donnée par un attribut <code class="highlighter-rouge">title</code> ou le contexte adjacent, et elle doit être pertinente</strong>.</p>
+
+<p>Exemple avec un attribut <code class="highlighter-rouge">title</code> et la balise <code class="highlighter-rouge">&lt;abbr&gt;</code> :</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;abbr title="A un de ces quatres"&gt;à12C4&lt;/abbr&gt;
+</code></pre></div></div>
+
+<p>Néanmoins, le rendu de l’attribut <code class="highlighter-rouge">title</code> n’est pas toujours optimal selon les lecteurs d’écran, et il n’est pas accessible sur un mobile ou via la navigation au clavier.</p>
+
+<p>La signification peut également être indiquée dans le contexte, par exemple entre parenthèses :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;à12C4 (à un de ces quatres)&lt;/p&gt;
+</code></pre></div></div>
+
+<p>Cette solution garantit la lisibilité de la signification pour tous les utiliateurs et utilisatrices. Il est possible de rendre ce texte uniquement accessible aux technologies d’assistance en le masquant de manière appropriée :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;à12C4 &lt;span class="sr-only"&gt;(à un de ces quatres)&lt;/span&gt;&lt;/p&gt;
+</code></pre></div></div>
+
+<p>Dans le cas des dessins ASCII, on peut également envisager de fournir une alternative textuelle ainsi qu’un lien permettant d’accéder directement au contenu suivant. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;p&gt;Dessin en art ASCII représentant une personne contente.&lt;/p&gt;
+&lt;a href="#skipascii"&gt;Passer le dessin ASCII&lt;/a&gt;
+
+\O/
+ |
+/ \
+
+&lt;p id="skipascii"&gt;Contenu suivant&lt;/p&gt;
+</code></pre></div></div>
+
+:ET
