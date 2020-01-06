@@ -1,0 +1,125 @@
+I"�,<p>Implémenter des carrousels accessibles.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://adrianroselli.com/2018/01/improving-your-tweet-accessibility.html#Memes" lang="en" hreflang="en">Improving Your Tweet Accessibility - Memes<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Adrian Rosseli</li>
+  <li>lire la technique <a href="https://www.w3.org/TR/2010/NOTE-WCAG20-TECHS-20101014/H86#H86-ex3" lang="en" hreflang="en">Providing text alternatives for ASCII art, emoticons, and leetspeak</a> des WCAG (<span lang="en">Web Content Accessibility Guidelines</span>)</li>
+  <li>lire la notice <a href="https://developer.mozilla.org/fr/docs/Web/HTML/Element/pre">&lt;pre&gt; : l’élément de texte préformaté<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="règles-relatives-aux-contenus-animés">Règles relatives aux contenus animés</h3>
+<p>Nous nous intéressons au critère d’accessibilité suivant :</p>
+
+<blockquote>
+  <p>Critère 13.8. Dans chaque page web, chaque contenu en mouvement ou clignotant est-il contrôlable par l’utilisateur ?</p>
+</blockquote>
+
+<p>Par “contenu en mouvement ou clignotant”, le RGAA (Référentiel Général d’Amélioration de l’Accessibilité) entend tout contenu animé. Il peut s’agir d’images animés au format GIF, SVG ou Flash, d’animations en CSS (<span lang="en">Cascading Style Sheets</span>) ou Javascript, de vidéos…</p>
+
+<p>Pour chaque contenu en mouvement ou clignotant :</p>
+<ul>
+  <li>
+    <p>la durée doit être inférieure ou égale à 5 secondes</p>
+  </li>
+  <li>
+    <p>l’internaute peut arrêter et relancer le mouvement/clignotement</p>
+  </li>
+  <li>
+    <p>l’internaute peut masquer et afficher le mouvement/clignotement</p>
+  </li>
+  <li>
+    <p>la totalité de l’information peut être affichée sous mouvement/clignotement</p>
+  </li>
+</ul>
+
+<p>J’ai déjà traité le cas des <a href="/100daysofa11y-day35/">GIFs animés</a> et des <a href="/100daysofa11y-day54/">medias</a> dans de précédents articles. Je m’intéresse donc ici spécifiquement aux carrousels car en tant qu’intégratrice, j’ai très souvent eu à en implémenter sur des sites.</p>
+
+<h3 id="les-carrousels">Les carrousels</h3>
+<h4 id="impacts-sur-les-internautes">Impacts sur les internautes</h4>
+<p>Les carrousels (“<span lang="en">carousels</span>” avec un seul “R” en anglais !) sont des éléments très régulièrement demandés sur les sites internet. Il s’agit d’un module permettant de faire défiler des images, du texte ou des vidéos dans un site web. Pourtant ce type de fonctionnalités, s’il est mal implémenté, peut être source de nombreux problèmes.</p>
+
+<p>Souvent utilisés car ils permettent de placer un maximum d’informations au-dessus de la ligne de flottaison, <strong>leur rentabilité est très faible</strong> : le taux de clic se situe en moyenne entre 1 et 3%, avec une majorité de clic sur la première slide. L’internaute se concentre avant tout sur la première slide au détriment des autres, au risque de passer à côté d’informations importantes.</p>
+
+<p>En terme d’accessibilité, les carrousels peuvent également se révéler problématiques :</p>
+<ul>
+  <li>
+    <p>les personnes ayant des difficultés à lire auront du mal à déchiffrer un texte qui défile trop rapidement</p>
+  </li>
+  <li>
+    <p>le défilement automatique peut distraire et perturber des personnes ayant des troubles de l’attention et les empêcher de lire le reste de la page</p>
+  </li>
+  <li>
+    <p>pour les personnes utilisant un lecteur d’écran, la restitution peut s’avérer extrêmement fastidieuse car dès que le texte défile, la lecture reprend sur la nouvelle slide affichée, sans nécessairement avoir eu le temps de finir le texte de la précédente</p>
+  </li>
+</ul>
+
+<h4 id="faut-il-les-utiliser-">Faut-il les utiliser ?</h4>
+<p>Au vue des problèmes précédement cités, il paraît judicieux de se poser la question suivante : dois-je implémenter un carrousel sur mon site ? Pourtant, ces mauvaise résultats s’expliquent souvent par le souhait de copier un site concurrent et une mauvaise implémentation.</p>
+
+<p>Le site Siècle Digital, dans son article <a href="https://siecledigital.fr/2014/07/31/carrousel-abandon-ecommerce/">Abandon du carrousel sur les sites ecommerce ?<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> avance les problèmes techniques suivants :</p>
+<ul>
+  <li>
+    <p>des slides peu souvent mises à jour</p>
+  </li>
+  <li>
+    <p>trop de slides, souvent surchargées d’informations</p>
+  </li>
+  <li>
+    <p>un défilement soit trop lent ou trop rapide en fonction des internautes</p>
+  </li>
+</ul>
+
+<p>Pour autant, un carrousel peu chargé, efficace et contrôlable par l’internaute permet d’animer un site et peut pousser l’internaute à rester d’avantage de temps.</p>
+
+<p>En tant qu’intégrateur ou intégratrice, notre travail ne porte pas sur les contenus du carrousel, mais sur son implémentation technique : à nous donc de faire en sorte qu’il soit accessible à toutes et à tous.</p>
+
+<h4 id="rendre-un-carrousel-accessible">Rendre un carrousel accessible</h4>
+<p>Parmi les éléments importants à implémenter sur un carrousel accessible, il faut veiller à :</p>
+<ul>
+  <li>
+    <p>ne pas déclencher automatiquement l’animation du carrousel</p>
+  </li>
+  <li>
+    <p>s’il y a un défilement automatique, prévoir un bouton marche/arrêt</p>
+  </li>
+  <li>
+    <p>afficher des boutons avec des intitulés clairs - “Suivant” et “Précédent” - pour faire défiler le carrousel</p>
+  </li>
+  <li>
+    <p>indiquer la position courante dans la totalité des slides, par exemple avec des cercles au bas du carrousel (attention l’item actif ne doit pas se distinguer uniquement par la couleur, mais avoir aussi une forme ou taille différente)</p>
+  </li>
+  <li>
+    <p>faire en sorte que le carrousel demeure fonctionnel sans Javascript, de telle sorte que l’on puisse lire les slides de manière linéaire</p>
+  </li>
+</ul>
+
+<p>Les différents boutons du carrousel doivent pouvoir recevoir un focus visible et posséder un contraste suffisant par rapport à leur arrière plan. Sur mobile, ces boutons doivent posséder une surface de touch suffisante pour être utilisables (pour le défilement des slides, un swipe est possible).</p>
+
+<h4 id="analyse-de-carrousels">Analyse de carrousels</h4>
+<ul>
+  <li>
+    <p>sur le site sncf.com, le carrousel possède des boutons marche/arrêt, ainsi que précédent/suivant. La position courante est indiquée par des cercles, vides ou remplis en fonction de si la slide est active ou non. Les intitulés de chaque bouton sont indiqués dans le code et sont explicites.</p>
+  </li>
+  <li>
+    <p>sur le site Sephora, le carrousel n’est pas en défilement automatique et possède bien des boutons précédent/suivant permettant à l’internaute de jouer l’animation comme il ou elle le souhaite. En revanche, les boutons précédent/suivant ne sont pas balisés en tant que tels dans le code HTML mais sous forme de <code class="highlighter-rouge">&lt;div&gt;</code> et matérialisé avec un pseudo-élément <code class="highlighter-rouge">::before</code>. D’autre part, la position courante n’est pas indiquée et nous n’avons aucune idée du nombre de slides présentes.</p>
+  </li>
+</ul>
+
+<h4 id="exemples-de-code-pour-implémenter-un-carrousel-accessible">Exemples de code pour implémenter un carrousel accessible</h4>
+<ul>
+  <li>
+    <p><a href="http://www.romaingervois.fr/carrousel/">le carrousel de Romain Gervois<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>, respectant les WCAG (<span lang="en">Web Content Accessibility Guidelines</span>)</p>
+  </li>
+  <li>
+    <p><a href="https://van11y.net/fr/carrousel-accessible/">le carrousel accessible de Van11y<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> par Nicolas Hoffmann</p>
+  </li>
+  <li>
+    <p><a href="https://www.accede-web.com/notices/interface-riche/carrousels/">le carrousel d’AcceDe Web<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>, avec sa notice de conception détaillée</p>
+  </li>
+  <li>
+    <p><a href="https://www.w3.org/TR/wai-aria-practices-1.1/#carousel" hreflang="en">le design pattern “Carousel” du W3C<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a></p>
+  </li>
+</ul>
+
+:ET
