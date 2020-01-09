@@ -1,0 +1,69 @@
+I"~<p>Gestion des interactions par pression ou relâchement, et par mouvement.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://www.pierre-giraud.com/javascript-apprendre-coder-cours/chemin-critique-rendu-async-defer/">Le chemin critique du rendu et les attributs HTML async et defer<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Pierre Giraud</li>
+  <li>lire l’article <a href="https://la-cascade.io/le-dom-cest-quoi-exactement/">Le DOM, c’est quoi exactement ?</a> de Ire Aderinokun</li>
+  <li>lire la notice <a href="https://developer.mozilla.org/fr/docs/Glossaire/MOA">Arbre d’accessibilité</a> de Mozilla</li>
+  <li>regarder la vidéo <a href="https://youtu.be/rvYXa2nGE04" lang="en" hreflang="en">The Accessibility Tree</a> de Udacity</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<p>Avant de s’intéresser plus en détails à l’arbre d’accessibilité, il est essentiel de comprendre comment est généré une page web et comment est construit le DOM (<span lang="en">Document Object Model</span>), sur lequel est basé l’arbre d’accessibilité.</p>
+
+<h3 id="le-chemin-critique-du-rendu">Le chemin critique du rendu</h3>
+<p>Une page web, construite à partir d’un fichier source HTML, est affichée sur un navigateur en plusieurs étapes que l’on appelle “<strong>chemin critique du rendu</strong>” :</p>
+<ol>
+  <li><strong>Construction du DOM</strong> : il s’agit d’une représentation des éléments</li>
+  <li><strong>Construction du CSSOM</strong> (<span lang="en">CSS Object Model</span>) : il s’agit d’une représentation des styles associés aux éléments</li>
+  <li><strong>Exécution du code Javascript</strong></li>
+  <li><strong>Création de l’arbre de rendu</strong> : il s’agit d’une combinaison du DOM et du CSSOM, il représente ce qui va être affiché sur la page.</li>
+  <li><strong>Génération de la mise en page</strong> : il s’agit de déterminer la taille de la fenêtre active (ou viewport) pour pouvoir appliquer les styles CSS en conséquence</li>
+  <li><strong>Conversion du contenu visible final de la page en pixels</strong></li>
+</ol>
+
+<p>Au terme de ces 6 étapes, le fichier source HTML initial est affiché dans le navigateur.</p>
+
+<h3 id="le-dom">Le DOM</h3>
+<p><strong>Le DOM, traduit par modèle objet de document, est donc une représentation du code HTML source</strong>. Il permet au développeur d’accéder, de modifier, d’ajouter ou de supprimer les données d’un document HTML. Autrement dit, le DOM permet de convertir le document HTML en un modèle objet manipulable par différents programmes ou langages (comme le Javascript).</p>
+
+<p><strong>La structure du DOM est représentée sous la forme d’un arbre</strong> ou <span lang="en">node tree</span>, qui signifie “arborescence de noeuds”. On l’appelle ainsi car il ressemble à un arbre se ramifiant en plusieurs branches :</p>
+<ul>
+  <li>le premier parent est l’élément racine <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code></li>
+  <li>les branches sont les éléments imbriqués</li>
+  <li>les feuilles sont le contenu des éléments</li>
+</ul>
+
+<p><strong>Le DOM n’est pas nécessairement une représentation exacte du code source HTML</strong> :</p>
+<ul>
+  <li>
+    <p>si le code HTML n’est pas valide, le navigateur peut être amené à corriger les éléments invalides lors de la construction du DOM. Par exemple : ajouter une balise <code class="highlighter-rouge">&lt;body&gt;</code> manquante dans le code source.</p>
+  </li>
+  <li>
+    <p>si le DOM est modifié par du Javascript : il est possible d’ajouter des éléments supplémentaires en Javascript. Le DOM sera bien mis à jour mais pour autant le document HTML source restera inchangé.</p>
+  </li>
+</ul>
+
+<p><strong>Le DOM n’est pas la page qui s’affiche dans le navigateur</strong>. Ce qui s’affiche dans le navigateur, c’est l’arbre de rendu, c’est à dire la combinaison du DOM et du CSSOM. L’arbre de rendu ne comprend que ce qui sera visible à l’écran, il exclut donc les éléments visuellement cachés, par exemple ceux stylés avec la propriété <code class="highlighter-rouge">display: none;</code>.</p>
+
+<p><strong>Le DOM n’est pas exactement le code affiché dans l’inspecteur d’éléments DevTools</strong>. L’inspecteur d’éléments inclue des informations supplémentaires qui ne sont pas présentes dans le DOM. C’est le cas par exemple des pseudo-éléments CSS <code class="highlighter-rouge">::before</code> et <code class="highlighter-rouge">::after</code>. Ils font bien partie du CSSOM et de l’arbre de rendu, mais pas du DOM, pourtant nous pouvons les voir dans l’inspecteur DevTools. Pour autant, le rendu de l’inspecteur d’éléments est ce qui se rapproche le plus du DOM.</p>
+
+<h3 id="larbre-daccessibilité">L’arbre d’accessibilité</h3>
+<p><strong>Les navigateurs créent également un arbre d’accessibilité basé sur le DOM</strong>. L’arbre d’accessibilité ressemble un peu à l’arbre du DOM, mais <strong>il contient un nombre plus restreint d’éléments ainsi que des informations légèrement différentes à leur sujet</strong>. Ces éléments et ces informations sont destinés à être utilisés par les technologies d’assistance, telles que les lecteurs d’écran, pour restituer le contenu d’une page à l’internaute.</p>
+
+<p>Un objet de l’arbre d’accessibilité contient 4 éléments :</p>
+<ul>
+  <li>
+    <p><strong>un nom (<span lang="en">a name</span>)</strong>, pour faire référence à l’objet en question</p>
+  </li>
+  <li>
+    <p><strong>une description (<span lang="en">a description</span>)</strong>, pour décrire un objet et apporter des informations en plus de son nom</p>
+  </li>
+  <li>
+    <p><strong>un rôle (<span lang="en">a role</span>)</strong>, pour expliquer à quoi sert l’objet</p>
+  </li>
+  <li>
+    <p><strong>un état (<span lang="en">a state</span>)</strong>, par exemple coché/décoché pour les checkboxes</p>
+  </li>
+</ul>
+:ET

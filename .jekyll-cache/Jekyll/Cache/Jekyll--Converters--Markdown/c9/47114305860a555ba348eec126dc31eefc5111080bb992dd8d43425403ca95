@@ -1,0 +1,41 @@
+I"<p>Gestion des interactions par pression ou relâchement, et par mouvement.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://www.pierre-giraud.com/javascript-apprendre-coder-cours/chemin-critique-rendu-async-defer/">Le chemin critique du rendu et les attributs HTML async et defer<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Pierre Giraud</li>
+  <li>
+    <p>lire l’article <a href="https://la-cascade.io/le-dom-cest-quoi-exactement/">Le DOM, c’est quoi exactement ?</a> de Ire Aderinokun</p>
+  </li>
+  <li>lire l’article <a href="https://www.w3.org/WAI/WCAG21/Understanding/motion-actuation.html" lang="en" hreflang="en">Understanding Success Criterion 2.5.4: Motion Actuation</a> des WCAG</li>
+  <li>lire l’article <a href="https://www.w3.org/WAI/WCAG21/Understanding/target-size.html" lang="en" hreflang="en">Understanding Success Criterion 2.5.5: Target Size</a> des WCAG</li>
+  <li>lire l’article <a href="https://a11yproject.com/posts/large-touch-targets/" lang="en" hreflang="en">Quick test: Large touch targets</a> de Eric Bailey</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<p>Avant de s’intéresser plus en détails à l’arbre d’accessibilité, il est essentiel de comprendre comment est généré une page web et comment est construit le DOM (<span lang="en">Document Object Model</span>).</p>
+
+<h3 id="le-chemin-critique-du-rendu">Le chemin critique du rendu</h3>
+<p>Une page web, construite à partir d’un fichier source HTML, est affichée sur un navigateur en plusieurs étapes que l’on appelle “<strong>chemin critique du rendu</strong>” :</p>
+<ol>
+  <li><strong>Construction du DOM</strong> : il s’agit d’une représentation des éléments</li>
+  <li><strong>Construction du CSSOM</strong> (<span lang="en">CSS Object Model</span>) : il s’agit d’une représentation des styles associés aux éléments</li>
+  <li><strong>Exécution du code Javascript</strong></li>
+  <li><strong>Création de l’arbre de rendu</strong> : il s’agit d’une combinaison du DOM et du CSSOM, il représente ce qui va être affiché sur la page.</li>
+  <li><strong>Génération de la mise en page</strong> : il s’agit de déterminer la taille de la fenêtre active (ou viewport) pour pouvoir appliquer les styles CSS en conséquence</li>
+  <li><strong>Conversion du contenu visible final de la page en pixels</strong></li>
+</ol>
+
+<p>Au terme de ces 6 étapes, le fichier source HTML initial est affiché dans le navigateur.</p>
+
+<h3 id="le-dom">Le DOM</h3>
+<p><strong>Le DOM, traduit par modèle objet de document, est donc une représentation du code HTML source</strong>. Il permet au développeur d’accéder, de modifier, d’ajouter ou de supprimer les données d’un document HTML. Autrement dit, le DOM permet de convertir le document HTML en un modèle objet manipulable par différents programmes ou langages (comme le Javascript).</p>
+
+<p>La structure du DOM est représentée sous la forme d’un arbre ou <span lang="en">node tree</span>, qui signifie “arborescence de noeuds”. On l’appelle ainsi car il ressemble à un arbre se ramifiant en plusieurs branches :</p>
+<ul>
+  <li>le premier parent est l’élément racine <code class="highlighter-rouge"><span class="nt">&lt;html&gt;</span></code></li>
+  <li>les branches sont les éléments imbriqués</li>
+  <li>les feuilles sont le contenu des éléments</li>
+</ul>
+
+<p>Ce qui distingue le DOM de l’arbre de rendu c’est que ce dernier ne comprend que ce qui sera “peint” à l’écran. De ce fait, il exclut les éléments visuellement cachés, par exemple ceux stylés display: none.</p>
+:ET
