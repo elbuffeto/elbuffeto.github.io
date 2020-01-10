@@ -1,0 +1,82 @@
+I"%<p>Comment inspecter l’arbre d’accessibilité dans Firefox ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>regarder la vidéo <a href="https://youtu.be/7mqqgIxX_NU" lang="en" hreflang="en">Understand Website Accessibility with the Firefox Accessibility Inspector<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Jen Simmons</li>
+  <li>lire l’article <a href="https://developer.mozilla.org/fr/docs/Outils/Inspecteur_accessibilite">Inspecteur de l’accessibilité<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+  <li>lire l’article <a href="https://hacks.mozilla.org/2019/06/how-accessibility-trees-inform-assistive-tech/" lang="en" hreflang="en">How accessibility trees inform assistive tech</a> de Hidde de Vries</li>
+  <li>lire l’article <a href="https://hacks.mozilla.org/2019/10/auditing-for-accessibility-problems-with-firefox-developer-tools/" lang="en" hreflang="en">Auditing For Accessibility Problems With Firefox Developer Toolse</a> de Marco Zehe</li>
+  <li>inspecter mon blog et mon site personnel avec l’inspecteur d’accessibilité</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="activer-linspecteur-daccessibilité-de-firefox">Activer l’inspecteur d’accessibilité de Firefox</h3>
+<p>L’inspecteur d’accessibilité est disponible dans les outils de développement depuis Firefox 63.</p>
+
+<p>Par défaut, les outils de développement consacrés à l’accessibilité sont désactivés : le moteur d’accessibilité est en effet gourmand en énergie et peut réduire les performances du navigateur. Aussi, lorsque vous n’en avez plus l’utilité, pensez à l’éteindre.</p>
+
+<p>C’est le bouton “Activer les fonctionnalités d’accessibilité” qui permet d’afficher le panneau d’accessibilité. L’icon en forme de bonhomme située à gauche dans l’onglet “Accessibilité” prend la couleur verte pour indiquer que l’inspecteur d’accessibilité est actif.</p>
+
+<figure role="group">
+  <img src="../images/posts/inspector-1.png" alt="Capture d'écran de l'inspecteur d'accessibilité de Firefox" />
+  <figcaption>Capture d'écran de l'inspecteur d'accessibilité de Firefox : par défaut il est inactif et peut être activé grâce au bouton "Activer les fonctionnalités d'accessibilité"</figcaption>
+</figure>
+
+<h3 id="le-panneau-daccessibilité">Le panneau d’accessibilité</h3>
+<h4 id="présentation">Présentation</h4>
+<p>Le panneau d’accessibilité se découpe en deux parties :</p>
+<ul>
+  <li>
+    <p><strong>l’arbre d’accessibilité</strong> représentant de manière hiérarchique les différents éléments de la page courante. Les éléments qui possèdent des éléments fils disposent d’une flèche sur laquelle on peut cliquer pour accéder aux éléments inférieurs. Chaque objet est présenté dans l’arbre d’accessibilité avec son nom et son rôle.</p>
+  </li>
+  <li>
+    <p>la seconde partie présente <strong>des propriétés supplémentaires sur les éléments sélectionnés dans l’arbre</strong>, telles que le nom et le rôle (déjà présents dans l’arbre), les actions qui peuvent être effectuées sur l’élément, la valeur de l’élément, les différents états… Vous pouvez retrouver l’ensemble des propriétés et leur explication sur l’article <a href="https://developer.mozilla.org/fr/docs/Outils/Inspecteur_accessibilite">Inspecteur de l’accessibilité</a> de Mozilla</p>
+  </li>
+</ul>
+
+<figure role="group">
+  <img src="../images/posts/inspector-2.png" alt="Capture d'écran du panneau d'accessibilité de Firefox" />
+  <figcaption>Capture d'écran du panneau d'accessibilité de Firefox : à gauche l'arbre d'accessibilité, à droite les différentes propriétés relatives aux éléments de l'arbre</figcaption>
+</figure>
+
+<h4 id="prise-en-main">Prise en main</h4>
+<p>Lorsque l’inspecteur d’accessibilité est activé, <strong>une option supplémentaire apparaît dans le menu contextuel de la page (menu accessible via le clic droit sur un élément) :  “Inspecter les propriétés d’accessibilité”</strong>. Cette option ouvre automatiquement le panneau d’accessibilité (si ce n’est pas déjà fait) et se positionne directement sur l’élément dans l’arbre d’accessibilité.</p>
+
+<p>Dans le panneau d’accessibilité, lorsque la souris survole un élément de l’arbre, l’élément en question se démarque visuellement sur la page grâce à un surlignage semi-transparent. Son nom et son rôle sont également indiqués.</p>
+
+<figure role="group">
+  <img src="../images/posts/inspector-3.png" alt="Capture d'écran du survol d'un élément via le panneau d'accessibilité" />
+  <figcaption>Capture d'écran du survol d'un élément via le panneau d'accessibilité : l'élément est surligné, son nom et son rôle sont affichés en haut, au centre.</figcaption>
+</figure>
+
+<p><strong>Il est également possible de sélectionner directement un élément dans la page et de le retrouver ensuite dans l’arbre d’accessibilité</strong>. Le sélecteur d’accessibilité, lorsqu’il est activé, permet de survoler la page et de mettre en évidence les différents éléments grâce à un surlignage semi-transparent, ainsi que leur nom et leur rôle. On peut ensuite voir l’élément sélectionné dans l’arbre d’accessibilité du panneau.</p>
+
+<figure role="group">
+  <img src="../images/posts/inspector-4.png" alt="Capture d'écran du sélecteur d'accessibilité" />
+  <figcaption>Capture d'écran du sélecteur d'accessibilité : lorsqu'il est actif, il permet de sélectionner les différents éléments de la page courante au survol.</figcaption>
+</figure>
+
+<h3 id="résoudre-des-problèmes-daccessibilité-avec-linspecteur">Résoudre des problèmes d’accessibilité avec l’inspecteur</h3>
+<p><strong>L’inspecteur d’accessibilité nous indique tout d’abord quelles informations seront restituées aux personnes utilisant des technlogies d’assistance</strong>. Cela nous permet donc, avant même d’utiliser des lecteurs d’écran, de disposer d’un premier test de lecture de notre code. Jen Simmons, dans sa vidéo <a href="https://youtu.be/7mqqgIxX_NU" lang="en" hreflang="en">Understand Website Accessibility with the Firefox Accessibility Inspector<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>, montre ainsi comment utiliser l’inspecteur et l’arbre d’accessibilité pour améliorer l’accessibilité de son code.</p>
+
+<p>L’inspecteur d’accessibilité permet également de cibler des problèmes plus spécifiques :</p>
+<ul>
+  <li>
+    <p><strong>les contrastes</strong> : l’inspecteur peut vérifier le contraste de couleurs des différents éléments et indiquer s’il est conforme ou non aux règles des WCAG (<span lang="en">Web Content Accessibility Guidelines</span>).</p>
+  </li>
+  <li>
+    <p><strong>les contrôles au clavier</strong> : l’inspecteur détecte les problèmes courants liés à la navigation au clavier et donne des indications sur comment les résoudre.</p>
+  </li>
+  <li>
+    <p><strong>la présence du nom de l’élément</strong> : l’inspecteur vérifie que les différents éléments de l’arbre sont correctement nommés. Le nom est en effet la principale source d’information que les technologies d’assistance utilisent pour informer l’internaute sur ce que fait un élément particulier.</p>
+  </li>
+  <li>
+    <p><strong>le simulateur de déficience de perception des couleurs</strong> : cette fonctionnalité est censé être présente depuis Firefox 70 cependant ce n’est pas mon cas (j’utilise Firefox version 70 sur Linux), peut-être est-ce votre cas également ? Cet outil simule sept types de déficiences de perception des couleurs, ce qui permet d’avoir un aperçu de la manière dont les personnes souffrant d’un handicap visuel verraient la page.</p>
+  </li>
+</ul>
+
+<figure role="group">
+  <img src="../images/posts/inspector-5.png" alt="Capture d'écran du menu de détection des problèmes d'accessibilité" />
+  <figcaption>Capture d'écran du menu de détection des problèmes d'accessibilité : il est possible de sélectionner un problème à la fois, ou tous en même temps.</figcaption>
+</figure>
+:ET

@@ -1,15 +1,15 @@
-I"K<p>Gestion des interactions par pression ou relâchement, et par mouvement.</p>
+I"�<p>Comment est généré l’arbre d’accessibilité d’une page web ?</p>
 
 <h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
 <ul>
   <li>lire l’article <a href="https://www.pierre-giraud.com/javascript-apprendre-coder-cours/chemin-critique-rendu-async-defer/">Le chemin critique du rendu et les attributs HTML async et defer<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Pierre Giraud</li>
-  <li>lire l’article <a href="https://la-cascade.io/le-dom-cest-quoi-exactement/">Le DOM, c’est quoi exactement ?</a> de Ire Aderinokun</li>
-  <li>lire la notice <a href="https://developer.mozilla.org/fr/docs/Glossaire/MOA">Arbre d’accessibilité</a> de Mozilla</li>
-  <li>regarder la vidéo <a href="https://youtu.be/rvYXa2nGE04" lang="en" hreflang="en">The Accessibility Tree</a> de Udacity</li>
+  <li>lire l’article <a href="https://la-cascade.io/le-dom-cest-quoi-exactement/">Le DOM, c’est quoi exactement ?<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Ire Aderinokun</li>
+  <li>lire la notice <a href="https://developer.mozilla.org/fr/docs/Glossaire/MOA">Arbre d’accessibilité<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+  <li>regarder la vidéo <a href="https://youtu.be/rvYXa2nGE04" lang="en" hreflang="en">The Accessibility Tree<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Udacity</li>
 </ul>
 
 <h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
-<p>Avant de s’intéresser plus en détails à l’arbre d’accessibilité, il est essentiel de comprendre comment est généré une page web et comment est construit le DOM (<span lang="en">Document Object Model</span>).</p>
+<p>Avant de s’intéresser plus en détails à l’arbre d’accessibilité, il est essentiel de comprendre comment est généré une page web et comment est construit le DOM (<span lang="en">Document Object Model</span>), sur lequel est basé l’arbre d’accessibilité.</p>
 
 <h3 id="le-chemin-critique-du-rendu">Le chemin critique du rendu</h3>
 <p>Une page web, construite à partir d’un fichier source HTML, est affichée sur un navigateur en plusieurs étapes que l’on appelle “<strong>chemin critique du rendu</strong>” :</p>
@@ -37,7 +37,7 @@
 <p><strong>Le DOM n’est pas nécessairement une représentation exacte du code source HTML</strong> :</p>
 <ul>
   <li>
-    <p>si le code HTML n’est pas valide, le navigateur peut être amené à corriger les éléments invalides lors de la construction du DOM. Par exemple : ajouter une balise <code class="highlighter-rouge">&lt;body&gt;</code> manquante dans le code source.</p>
+    <p>si le code HTML n’est pas valide : le navigateur peut être amené à corriger les éléments invalides lors de la construction du DOM. Par exemple : ajouter une balise <code class="highlighter-rouge">&lt;body&gt;</code> manquante dans le code source.</p>
   </li>
   <li>
     <p>si le DOM est modifié par du Javascript : il est possible d’ajouter des éléments supplémentaires en Javascript. Le DOM sera bien mis à jour mais pour autant le document HTML source restera inchangé.</p>
