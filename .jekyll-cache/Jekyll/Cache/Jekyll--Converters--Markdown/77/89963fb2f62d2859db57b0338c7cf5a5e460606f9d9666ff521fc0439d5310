@@ -1,0 +1,129 @@
+I"V4<p>Qu’est-ce que le nom accessible d’un élément HTML et comment le définir ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/a11y-name.html">Le nom accessible en HTML<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire l’article <a href="https://developer.paciellogroup.com/blog/2017/04/what-is-an-accessible-name/" lang="en" hreflang="en">What is an accessible name?<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Léonie Watson</li>
+  <li>lire l’article <a href="https://www.24joursdeweb.fr/2019/les-noms-accessibles-dans-tous-leurs-etats/">Les noms accessibles dans tous leurs états<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Lena Chandelier</li>
+  <li>lire la notice <a href="https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-label">Utiliser l’attribut aria-label<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+  <li>lire la notice <a href="https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-labelledby">Utiliser l’attribut aria-labelledby<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="définition">Définition</h3>
+<p>Nous avons vu dans les articles précédents que les navigateurs génèrent un arbre d’accessibilité à partir du DOM (<span lang="en">Document Object Model</span>). Dans cet arbre, on retrouve différents objets, par exemple un <code class="highlighter-rouge">&lt;a&gt;</code>, un <code class="highlighter-rouge">&lt;label&gt;</code> ou un <code class="highlighter-rouge">&lt;span&gt;</code>, qui ont besoin d’un nom accessible pour pouvoir être correctement restitués par les technologies d’assistance.</p>
+
+<p><strong>Le nom accessible d’un élément HTML est donc le texte qui est lu par les lecteurs d’écran pour identifier l’élément HTML en question</strong>. Il peut s’agir de l’attribut <code class="highlighter-rouge">alt</code> d’une image, du texte d’un bouton ou de l’intitulé d’un lien…</p>
+
+<p>Le nom accessible peut provenir :</p>
+<ul>
+  <li>du contenu d’une balise</li>
+  <li>d’un attribut de cette balise</li>
+  <li>d’un élément qui lui est associé</li>
+  <li>d’un attribut ARIA (<span lang="en">Accessible Rich Internet Applications</span>)</li>
+  <li>d’un texte invisible</li>
+</ul>
+
+<h3 id="nom-accessible-donné-par-le-contenu-dune-balise">Nom accessible donné par le contenu d’une balise</h3>
+<p>Prenons l’exemple suivant :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="rerv.html"&gt;Le Réseau Express Régional Vélo&lt;/a&gt;
+</code></pre></div></div>
+
+<p>Le nom accessible de ce lien est “Le Réseau Express Régional Vélo”. Un lecteur d’écran restituera donc ce lien de la manière suivante au moment de la prise de focus : “Le Réseau Express Régional Vélo Lien”. Reprenons ce même lien, cette fois sans intitulé :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="rerv.html"&gt;&lt;/a&gt;
+</code></pre></div></div>
+
+<p>Un lien de ce type n’est pas du tout accessible, car aucun nom n’est restitué par les technologies d’assistance. L’internaute n’a donc aucune idée de la destination de ce lien.</p>
+
+<h3 id="nom-accessible-donné-par-un-attribut">Nom accessible donné par un attribut</h3>
+<p>Prenons l’exemple suivant :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img src="rerv.jpg" alt="Carte du Réseau Express Régional Vélo" /&gt;
+</code></pre></div></div>
+
+<p>Le nom accessible de cette image est “Carte du Réseau Express Régional Vélo”. Dans l’article <a href="/100daysofa11y-day15/">Des liens accessibles (la théorie)</a>, nous avions vu que lorsqu’un lien est composé uniquement d’une image, c’est l’alternative de cette image qui constitue son intitulé : l’alternative est donc utilisée pour indiquer la destination du lien. Prenons donc l’exemple suivant :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="rerv.html"
+  &lt;img src="rerv.jpg" alt="Carte du Réseau Express Régional Vélo" /&gt;
+&lt;/a&gt;
+</code></pre></div></div>
+
+<p>Dans cet exemple, le nom accessible du lien est donné par l’attribut <code class="highlighter-rouge">alt</code> de l’image.</p>
+
+<h3 id="nom-accessible-donné-par-un-élément-associé">Nom accessible donné par un élément associé</h3>
+<p>Prenons l’exemple suivant :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;label for="search"&gt;Rechercher&lt;/label&gt;
+&lt;input id="search" type="text"&gt;
+
+</code></pre></div></div>
+
+<p>Le nom accessible de ce champ de formulaire est “Rechercher”. L’attribut <code class="highlighter-rouge">for</code> sur le <code class="highlighter-rouge">&lt;label&gt;</code> et l’attribut <code class="highlighter-rouge">id</code> sur le champ <code class="highlighter-rouge">&lt;input&gt;</code> partagent la même valeur. L’association entre les deux éléments permet au navigateur d’exposer le contenu du label en tant que nom accessible pour le champ.</p>
+
+<h3 id="nom-accessible-donné-par-un-attribut-aria">Nom accessible donné par un attribut ARIA</h3>
+<p>Il est également possible d’utiliser des attributs ARIA pour nommer un élément HTML ou modifier son nom accessible, notamment <code class="highlighter-rouge">aria-label</code> et <code class="highlighter-rouge">aria-labelledby</code>. Toutefois, <strong>il est important de noter que le nom accessible fourni par l’élément HTML natif sera remplacé par le nom accessible fourni par ARIA</strong>.</p>
+
+<h4 id="aria-label">Aria-label</h4>
+<p><strong>L’attribut <code class="highlighter-rouge">aria-label</code> peut être utilisé pour fournir un nom accessible à un élément qui n’en a pas</strong>. Les WCAG précisent également qu’un attribut <code class="highlighter-rouge">aria-label</code> doit être de préférence utilisé lorsque le texte d’un label n’est pas visible à l’écran. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button class="burger-menu" type="button" aria-label="Ouverture du menu" &gt;
+  &lt;span class="burger-icon"&gt;&lt;/span&gt;
+&lt;/button&gt;
+</code></pre></div></div>
+
+<p>Pour la plupart des usagers, le contexte et la forme du bouton (ici une icône de hamburger) suffisent à déterminer son rôle. En revanche les personnes aveugles ou mal-voyantes ne disposent pas de ces informations. L’attribut <code class="highlighter-rouge">aria-label</code> permet de fournir une alternative textuelle, ici “Ouverture du menu”. Notons bien que cet attribut <code class="highlighter-rouge">aria-label</code> n’est visible que pour les personnes utilisant des technologies d’assistance.</p>
+
+<p><strong>L’attribut <code class="highlighter-rouge">aria-label</code> peut aussi être utilisé pour fournir un autre nom accessible à un élément qui en possède déjà un</strong>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button aria-label="Calculer mon itinéraire par le Réseau Espress Régional Vélo"&gt;
+  Calculer mon itinéraire
+&lt;/button&gt;
+</code></pre></div></div>
+
+<p>Le nom accessible de ce bouton est bien “Calculer mon itinéraire par le Réseau Espress Régional Vélo”, car il supplante le nom HTML natif, à savoir “Calculer mon itinéraire”. Cela permet de fournir un nom accessible et plus significatif aux utilisateurs et utilisatrices de lecteurs d’écran, tout en présentant une étiquette plus courte aux personnes voyantes.</p>
+
+<p><strong>Attention !</strong> Depuis la publication de la version 2.1 des WCAG, un nouveau critère précise que <strong>le nom accessible ajouté doit reprendre au moins le nom affiché</strong>, ceci afin que les utilisateurs de commande vocale puissent faire interagir le composant d’interface. Dans l’exemple précédent, il faut donc que le <code class="highlighter-rouge">aria-label</code> contienne les mots “Calculer mon itinéraire”.</p>
+
+<h4 id="aria-labelledby">Aria-labelledby</h4>
+<p>L’attribut <code class="highlighter-rouge">aria-labelledby</code> permet de référencer comme nom accessible un texte qui se trouve ailleurs sur la page, grâce à un <code class="highlighter-rouge">id</code>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;dialog role="dialog" aria-labelledby="modal-title"&gt;
+  &lt;h1 id="modal-title"&gt;Votre demande a bien été prise en compte !&lt;/h1&gt;
+&lt;/dialog&gt;
+</code></pre></div></div>
+
+<p>On peut lier plusieurs <code class="highlighter-rouge">id</code> et donc plusieurs texte à un seul élément <code class="highlighter-rouge">aria-labelledby</code>. La restitution se fait alors dans l’ordre d’appel des identifiants. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 id="facturation"&gt;Facturation&lt;/h2&gt;
+
+&lt;div&gt;
+  &lt;h3 id="nom"&gt;Votre nom&lt;/h3&gt;
+
+  &lt;input type="text" aria-labelledby="nom facturation"/&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+  &lt;h3 id="adresse"&gt;Votre adresse&lt;/h3&gt;
+
+  &lt;input type="text" aria-labelledby="adresse facturation"/&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<p>Ici, les <code class="highlighter-rouge">aria-labelledby</code> restitueront donc respectivement :</p>
+<ul>
+  <li>“Votre nom Facturation”</li>
+  <li>“Votre adresse Facturation”</li>
+</ul>
+
+<h3 id="nom-accessible-donné-par-un-texte-invisible">Nom accessible donné par un texte invisible</h3>
+<p><strong>Il s’agit de texte invisible pour tout le monde, sauf les technologies d’assistance</strong>. Dans l’article <a href="/100daysofa11y-day46/">Cacher du contenu en CSS</a>, j’avais notamment évoqué la méthode employée par Gaël Poupard (voir son article <a href="https://www.ffoodd.fr/cache-cache-css/">Cache-cache CSS<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>) et la fameuse class <code class="highlighter-rouge">sr-only</code>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;a href="https://twitter.com/elbuffeto" class="twitter"&gt;
+  &lt;span class="sr-only"&gt;Compte Twitter de Loriane Buffet&lt;/span&gt;
+&lt;/a&gt;
+</code></pre></div></div>
+
+<p>Le nom accessible du lien est contenu dans le <code class="highlighter-rouge">&lt;span&gt;</code>, visible uniquement pour les technologies d’assistance.</p>
+:ET
