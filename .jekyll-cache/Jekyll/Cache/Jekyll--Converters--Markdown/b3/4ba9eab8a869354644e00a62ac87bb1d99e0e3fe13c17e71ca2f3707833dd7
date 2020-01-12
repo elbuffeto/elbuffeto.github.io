@@ -1,0 +1,43 @@
+I"�<p>Une introduction aux Applications Internet Riches et Accessibles.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/htmlaria.html">HTML5 et ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire la notice <a href="https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA">ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+  <li>
+    <p>lire l’article <a href="https://developers.google.com/web/fundamentals/accessibility/semantics-aria/" lang="en" hreflang="en">Introduction to ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Google</p>
+  </li>
+  <li>lire l’article <a href="https://www.24joursdeweb.fr/2019/les-noms-accessibles-dans-tous-leurs-etats/">Les noms accessibles dans tous leurs états<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Lena Chandelier</li>
+  <li>lire la notice <a href="https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Techniques_ARIA/Utiliser_l_attribut_aria-labelledby">Utiliser l’attribut aria-labelledby<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="définition">Définition</h3>
+<p>Au cours des dernières années, les applications web sont devenues de plus en plus complexes et des fonctionnalités de plus en plus poussées sont apparues : des carrousels, des sélecteurs de dates (<span lang="en">datepicker</span>)… <strong>Il est très difficile de rendre ces composants accessibles uniquement avec le langage HTML</strong> (<span lang="en">HyperText Markup Language</span>) : toutes les informations sémantiques ne sont pas remontées aux technologies d’assistance et la navigation au clavier est parfois impossible.</p>
+
+<p>Pour remédier à cela, <strong>le W3C (<span lang="en">World Wide Web Consortium</span>) a rédigé la spécification <a href="https://www.w3.org/TR/wai-aria-1.1/" hreflang="en">WAI-ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a></strong>.</p>
+
+<p>ARIA, de l’anglais “<span lang="en">Accessible Rich Internet Applications</span>”, que l’on pourrait traduire en français par “Applications Internet Riches et Accessibles”, est <strong>un ensemble d’attributs qui permet de rendre les contenus web plus accessibles, et notamment les composants d’interface dynamiques</strong>.</p>
+
+<p>ARIA agit comme <strong>une surcouche sémantique qui ajoute des rôles, des états et des propriétés à des composants d’interfaces</strong>. Ces attributs ajoutés vont spécifiquement interagir avec les technologies d’assistance.</p>
+
+<p><strong>Cette surcouche sémantique augmente et modifie l’arbre d’accessibilité</strong>.</p>
+
+<h3 id="règles-daria">Règles d’ARIA</h3>
+<ul>
+  <li>
+    <p>Règle n°1 : <strong>ne pas utiliser ARIA s’il est possible d’utiliser un élément HTML natif ou un attribut avec la sémantique et le comportement désiré</strong></p>
+  </li>
+  <li>
+    <p>Règle n° 2 : <strong>ne pas changer la sémantique native d’une élément</strong>, à moins que cela ne soit vraiment indispensable.</p>
+
+    <p>Ne pas faire :</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 role=tab&gt;heading tab&lt;/h2&gt;
+</code></pre></div>    </div>
+    <p>Plutôt privilégier :</p>
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div role=tab&gt;&lt;h2&gt;heading tab&lt;/h2&gt;&lt;/div&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+:ET
