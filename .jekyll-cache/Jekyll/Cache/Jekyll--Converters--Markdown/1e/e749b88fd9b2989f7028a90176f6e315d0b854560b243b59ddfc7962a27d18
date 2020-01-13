@@ -1,4 +1,4 @@
-I"6<p>Qu’est-ce que le nom accessible d’un élément HTML et sous quelles formes le retrouve-t-on ?</p>
+I"q:<p>Qu’est-ce que le nom accessible d’un élément HTML et sous quelles formes le retrouve-t-on ?</p>
 
 <h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
 <ul>
@@ -79,8 +79,7 @@
 
 <p>Notons bien que cet attribut <code class="highlighter-rouge">aria-label</code> n’est visible que pour les personnes utilisant des technologies d’assistance.</p>
 
-<h4 id="aria-labelledby">Aria-labelledby</h4>
-<p><strong>L’attribut <code class="highlighter-rouge">aria-labelledby</code> peut être utilisé pour fournir un autre nom accessible à un élément qui en possède déjà un</strong>. Les WCAG précisent ainsi que si le texte du libellé est visible à l’écran, il faut de préférence utiliser <code class="highlighter-rouge">aria-labelledby</code> et pas <code class="highlighter-rouge">aria-label</code>. Par exemple :</p>
+<p><strong>L’attribut <code class="highlighter-rouge">aria-labelledby</code> peut aussi être utilisé pour fournir un autre nom accessible à un élément qui en possède déjà un</strong>. Par exemple :</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button aria-labelledby="Calculer mon itinéraire par le Réseau Espress Régional Vélo"&gt;
   Calculer mon itinéraire
@@ -91,14 +90,15 @@
 
 <p><strong>Attention !</strong> Depuis la publication de la version 2.1 des WCAG, un nouveau critère précise que <strong>le nom accessible ajouté doit reprendre au moins le nom affiché</strong>, ceci afin que les utilisateurs de commande vocale puissent faire interagir le composant d’interface. Dans l’exemple précédent, il faut donc que le <code class="highlighter-rouge">aria-labelledby</code> contienne les mots “Calculer mon itinéraire”.</p>
 
-<p><strong>L’attribut <code class="highlighter-rouge">aria-labelledby</code> permet aussi de référencer comme nom accessible un texte qui se trouve ailleurs sur la page</strong>, grâce à un <code class="highlighter-rouge">id</code>. Par exemple :</p>
+<h4 id="aria-labelledby">Aria-labelledby</h4>
+<p><strong>L’attribut <code class="highlighter-rouge">aria-labelledby</code> permet de référencer comme nom accessible un texte qui se trouve ailleurs sur la page</strong>. Les WCAG précisent ainsi que si le texte du libellé est visible à l’écran, il faut de préférence utiliser <code class="highlighter-rouge">aria-labelledby</code> et pas <code class="highlighter-rouge">aria-label</code>. Par exemple :</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;dialog role="dialog" aria-labelledby="modal-title"&gt;
   &lt;h1 id="modal-title"&gt;Votre demande a bien été prise en compte !&lt;/h1&gt;
 &lt;/dialog&gt;
 </code></pre></div></div>
 
-<p>On peut lier plusieurs <code class="highlighter-rouge">id</code> et donc plusieurs texte à un seul élément <code class="highlighter-rouge">aria-labelledby</code>. La restitution se fait alors dans l’ordre d’appel des identifiants. Par exemple :</p>
+<p>On peut lier plusieurs <code class="highlighter-rouge">id</code> et donc plusieurs textes à un seul élément <code class="highlighter-rouge">aria-labelledby</code>. La restitution se fait alors dans l’ordre d’appel des identifiants. Par exemple :</p>
 
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 id="facturation"&gt;Facturation&lt;/h2&gt;
 
@@ -130,4 +130,6 @@
 </code></pre></div></div>
 
 <p>Le nom accessible du lien est contenu dans le <code class="highlighter-rouge">&lt;span&gt;</code>, visible uniquement pour les technologies d’assistance.</p>
+
+<p><em>Note de l’autrice</em> : cet article a été modifié le 13 janvier 2020, suite à <a href="https://twitter.com/arnauddelafosse/status/1216671516072476672">une remarque d’Arnaud Delafosse sur Twitter<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>. La valeur d’un attribut <code class="highlighter-rouge">aria-labelledby</code> est bien celle correspondant à un <code class="highlighter-rouge">id</code> référencé sur la même page, tandis que la valeur d’un attribut <code class="highlighter-rouge">aria-label</code> est une chaîne de caractères correspondant au nom accessible. En conséquence, l’exemple cité dans le tweet a été déplacé dans la section relative à <code class="highlighter-rouge">aria-label</code>.</p>
 :ET
