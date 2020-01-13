@@ -1,0 +1,110 @@
+I"�'<p>Focus sur l’ordre de priorité des noms accessibles.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/label-ledby-describedby.html">Les attributs ARIA qui peuvent vous sauver<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire la spécification <a href="https://www.w3.org/TR/accname-1.1/#mapping_additional_nd_te" lang="en" hreflang="en">Accessible Name and Description Computation<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du W3C (<span lang="en">World Wide Web Consortium</span>)</li>
+  <li>lire l’article <a href="https://www.24joursdeweb.fr/2019/les-noms-accessibles-dans-tous-leurs-etats/">Les noms accessibles dans tous leurs états<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Lena Chandelier</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="lalgorithme-du-w3c">L’algorithme du W3C</h3>
+<p>Nous avons précédemment qu’<strong>il existe plusieurs méthodes pour donner un nom accessible à un élément</strong> :</p>
+<ul>
+  <li>
+    <p>avec du HTML natif, dans le contenu de la balise</p>
+  </li>
+  <li>
+    <p>avec du HTML complémentaire, grâce à des attributs comme <code class="highlighter-rouge">alt</code> ou <code class="highlighter-rouge">title</code></p>
+  </li>
+  <li>
+    <p>avec la surcouche sémantique ARIA, grâce à des attributs comme <code class="highlighter-rouge">aria-label</code> ou <code class="highlighter-rouge">aria-labelledby</code></p>
+  </li>
+  <li>
+    <p>avec du CSS, grâce à des propriétés spécifiques permettant de rendre le nom accessible visible uniquement aux technologies d’assistance</p>
+  </li>
+</ul>
+
+<p>Plusieurs de ces méthodes peuvent être utilisées simultanément et dans ce cas, <strong>le navigateur et le lecteur d’écran doivent effectuer un calcul pour déterminer quel est le nom accessible</strong>.</p>
+
+<p>Le W3C a donc établi <a href="https://www.w3.org/TR/accname-1.1/#mapping_additional_nd_te" hreflang="en">un algorithme de calcul<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> permettant de déterminer la priorité du nom accessible sur des composants interactifs tels que les champs de formulaire ou les liens.</p>
+
+<p>Je dois avouer que la spécification du W3C est assez technique et relativement complexe (quelqu’un ne veut pas se lancer dans une petite traduction ?), néanmoins voici ce que j’en ai compris.</p>
+
+<h4 id="aria-gagne-toujours">ARIA gagne toujours</h4>
+<p><strong><code class="highlighter-rouge">aria-labelledby</code> en premier, puis <code class="highlighter-rouge">aria-label</code> sont prioritaires dans le calcul et supplantent les autres valeurs de noms accessibles</strong>. Examinons le code suivant :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button aria-label="Accéder à mon site de recettes"&gt;Mes recettes&lt;/button&gt;
+</code></pre></div></div>
+
+<p>Le résultat restitué par un lecteur d’écran sera “Accéder à mon site de recette” uniquement, car <code class="highlighter-rouge">aria-label</code> est prioritaire sur le contenu texte. Prenons ensuite le code suivant :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;h2 id="titre"&gt;Mon site de recettes&lt;h2&gt;
+&lt;button aria-label="Accéder à mon site de recettes" aria-labelledby="titre"&gt;Mes recettes&lt;/buttton&gt;
+</code></pre></div></div>
+
+<p>Le résultat restitué par un lecteur d’écran sera “Mon site de recette”, car <code class="highlighter-rouge">aria-labelledby</code> est prioritaire sur <code class="highlighter-rouge">aria-label</code>.</p>
+
+<h4 id="title-en-dernier-recours"><code class="highlighter-rouge">title</code> en dernier recours</h4>
+<p>La spécification du W3C précise :</p>
+
+<blockquote>
+  <p>Tooltip attributes are used only if nothing else, including subtree content, has provided results.</p>
+</blockquote>
+
+<p><strong>La valeur de l’attribut <code class="highlighter-rouge">title</code> est donc la moins prioritaire</strong> et n’est utilisée que si aucun autre nom accessible n’est fourni.</p>
+
+<h4 id="attributs-et-éléments-associés">Attributs et éléments associés</h4>
+<p>Nous nous intéressons ensuite à ce qu’il se passe entre les attributs ARIA et l’attribut <code class="highlighter-rouge">title</code>. Immédiatement après <code class="highlighter-rouge">aria-labelledby</code> et <code class="highlighter-rouge">aria-label</code>, <strong>l’algorithme de calcul prend en compte l’attribut de l’élément ou un autre élément associé à même de fournir un nom accessible</strong>. Il peut s’agir par exemple de l’attribut <code class="highlighter-rouge">alt</code> d’une image ou d’une balise <code class="highlighter-rouge">label</code> associée à un champ de formulaire par un <code class="highlighter-rouge">id</code>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;img src="pandaroux.jpg" alt="Un panda roux endormi" title="Panda roux" /&gt;
+</code></pre></div></div>
+
+<p>Dans cet exemple, la valeur de l’attribut <code class="highlighter-rouge">alt</code> est définie comme nom accessible, en priorité sur la valeur de l’attribut <code class="highlighter-rouge">title</code>. Le nom accessible est donc “Un panda roux endormi”.</p>
+
+<h4 id="name-from-content">“Name from content”</h4>
+<p><strong>Certains éléments HTML peuvent fournir un nom accessible à partir de leur contenu</strong>. C’est le cas des éléments <code class="highlighter-rouge">button</code>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button title="Cliquez sur le bouton"&gt;Validez ma commande&lt;/buttton&gt;
+</code></pre></div></div>
+
+<p>Dans cet exemple, le nom accessible restitué par un lecteur d’écran sera “Validez ma commande”.</p>
+
+<h4 id="pseudo-éléments-css">Pseudo-éléments CSS</h4>
+<p><strong>Le contenu CSS généré par les pseudo-éléments <code class="highlighter-rouge">::before</code> et <code class="highlighter-rouge">::after</code> peut lui aussi avoir valeur de nom accessible</strong>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button class="btn" title="Cliquez sur le bouton"&gt;&lt;/buttton&gt;
+
+.btn::after {
+  content: 'Cliquez pour valider !';
+}
+</code></pre></div></div>
+
+<p>Dans cet exemple, le nom accessible restitué sera “Cliquez pour valider !”.</p>
+
+<p>Prenons maintenant l’exemple suivant :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;button class="btn" title="Cliquez sur le bouton"&gt;Validez ma commande&lt;/buttton&gt;
+
+.btn::after {
+  content: 'Cliquez pour valider !';
+}
+</code></pre></div></div>
+
+<p>Dans cet exemple, le nom accessible restitué sera “Validez ma commande Cliquez pour valider !”. L’algorithme de calcul concatène les valeurs du contenu texte et du pseudo-élément pour constituer le nom accessible.</p>
+
+<p><strong>Attention !</strong> Si l’internaute choisit de désactiver le CSS, il ou elle n’aura plus accès au contenu du pseudo-élement. Il est donc important de ne pas compter uniquement sur les pseudo-éléments pour générer un nom accessible ou tout contenu nécessaire à la compréhension.</p>
+
+<h3 id="récapitulatif">Récapitulatif</h3>
+<p>Si l’on résume les points précédents, l’ordre de priorié établi pour désigner le nom accessible d’un élément est donc le suivant :</p>
+<ol>
+  <li><code class="highlighter-rouge">aria-labelledby</code></li>
+  <li><code class="highlighter-rouge">aria-label</code></li>
+  <li>un attribut ou un élément HTML associé tel que <code class="highlighter-rouge">alt</code> pour une image ou <code class="highlighter-rouge">label</code> pour un champ de texte</li>
+  <li>contenu texte de l’élément et/ou pseudo-element CSS</li>
+  <li><code class="highlighter-rouge">title</code></li>
+</ol>
+
+<h3 id="notes">Notes</h3>
+<p>Un contenu caché par du CSS (grâce à la propriété <code class="highlighter-rouge">display: none;</code> ou <code class="highlighter-rouge">visibility: hidden;</code>) ou l’attribut HTML <code class="highlighter-rouge">hidden</code> entre en compte dans le calcul de priorité du nom accessible s’il est référencé par un attribut <code class="highlighter-rouge">aria-labelledby</code>.</p>
+:ET
