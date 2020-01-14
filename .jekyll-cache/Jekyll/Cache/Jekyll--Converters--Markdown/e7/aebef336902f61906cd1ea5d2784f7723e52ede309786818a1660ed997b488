@@ -1,0 +1,63 @@
+I"�<p>Focus sur l’ordre de priorité des noms accessibles.</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://a11y-guidelines.orange.com/web/label-ledby-describedby.html">Les attributs ARIA qui peuvent vous sauver<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> d’Orange</li>
+  <li>lire la spécification <a href="https://www.w3.org/TR/accname-1.1/#mapping_additional_nd_te" lang="en" hreflang="en">Accessible Name and Description Computation<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du W3C (<span lang="en">World Wide Web Consortium</span>)</li>
+  <li>lire l’article <a href="https://www.24joursdeweb.fr/2019/les-noms-accessibles-dans-tous-leurs-etats/">Les noms accessibles dans tous leurs états<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Lena Chandelier</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="définition">Définition</h3>
+<p>Dans la surcouche sémantique d’ARIA, <strong>les attributs rôles définissent ce qu’un élément fait, c’est à dire le rôle qu’il a dans une page</strong>. Ils nous donnent des informations sur l’objectif d’un élément HTML.</p>
+
+<p>Un attribut <code class="highlighter-rouge">role</code> peut-être ajouté à tout élément HTML : si l’élément n’a pas de rôle, l’attribut <code class="highlighter-rouge">role</code> va lui en ajouter un.</p>
+
+<h3 id="les-différents-types-de-rôles">Les différents types de rôles</h3>
+<p><strong>Il existe pas moins de 82 rôles ARIA</strong> (oui je me suis amusée à les compter sur <a href="https://www.w3.org/TR/wai-aria-1.1/#roles_categorization" hreflang="en">la liste établie par le W3C<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>).</p>
+
+<p>Ces rôles sont divisés en 6 catégories :</p>
+<ul>
+  <li>
+    <p><strong>Abstract Roles</strong> (12 rôles) : les abstract rôles sont le fondement sur lequel tous les autres rôles ARIA sont construits et <strong>ne doivent pas être utilisés dans la création de contenus</strong>.</p>
+  </li>
+  <li>
+    <p><strong>Widget Roles</strong> (29 rôles) : les rôles widget agissent comme des composants d’interfaces autonomes. Par exemple: <code class="highlighter-rouge">role="button"</code> ou <code class="highlighter-rouge">role="checkbox"</code> ou <code class="highlighter-rouge">role="tab"</code>. Certains rôles widget se définissent comme des conteneurs qui intègrent d’autres composants d’interfaces. Par exemple : <code class="highlighter-rouge">role="grid"</code> ou <code class="highlighter-rouge">role="menu"</code>.</p>
+  </li>
+  <li>
+    <p><strong>Document Structure</strong> (26 rôles) : ces rôles décrivent les structures qui organisent le contenu d‘une page, il ne sont généralement pas interactifs. Par exemple : <code class="highlighter-rouge">role="img"</code> ou <code class="highlighter-rouge">role="article"</code> ou <code class="highlighter-rouge">role="list"</code>.</p>
+  </li>
+  <li>
+    <p><strong>Landmark Roles</strong> (8 rôles) : les rôles landmark permettent aux utilisateurs et utilisatrices de lecteurs d’écran de mieux comprendre le rôle d’une zone et donc de mieux s’orienter dans la page. Par exemple : <code class="highlighter-rouge">role="main"</code> ou <code class="highlighter-rouge">role="search"</code> ou <code class="highlighter-rouge">role="navigation"</code>. Vous pouvez voir une démonstration de l’utilité de ces landmark roles sur la vidéo <a href="https://youtu.be/IhWMou12_Vk" hreflang="en" lang="en">How ARIA landmark roles help screen reader users</a> de Léonie Watson.</p>
+  </li>
+  <li>
+    <p><strong>Live Region Roles</strong> (5 rôles) : ces rôles correspondent à des “live regions”, c’est-à-dire des zones de page mises à jour sans que la position de l’internaute ne soit modifiée. Par exemple : <code class="highlighter-rouge">role="alert"</code> ou <code class="highlighter-rouge">role="timer"</code>.</p>
+  </li>
+  <li>
+    <p><strong>Window Roles</strong> (2 rôles) : les window rôles agissent comme des fenêtres dans le navigateur ou l’application. Par exemple : <code class="highlighter-rouge">role="alertdialog"</code> ou <code class="highlighter-rouge">role="dialog"</code>.</p>
+  </li>
+</ul>
+
+<h3 id="des-attributs-à-manier-avec-prudence">Des attributs à manier avec prudence</h3>
+<h4 id="privilégier-les-éléments-html-natifs">Privilégier les éléments HTML natifs</h4>
+<p>La première règle d’ARIA stipule :</p>
+
+<blockquote>
+  <p>Ne pas utiliser ARIA s’il est possible d’utiliser un élément HTML natif ou un attribut avec la sémantique et le comportement désiré.</p>
+</blockquote>
+
+<p>En effet, les éléments HTML possèdent par défaut un rôle natif : beaucoup de rôles ARIA sont équivalents à ceux des éléments HTML natifs. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;span role="heading" aria-level="1"&gt;Titre de niveau 1&lt;/span&gt;
+</code></pre></div></div>
+<p>Dans cet exemple, les attributs <code class="highlighter-rouge">role="heading"</code> et <code class="highlighter-rouge">aria-level="1"</code> permettent de transformer un simple élément <code class="highlighter-rouge">&lt;span&gt;</code> en titre de niveau 1. Mieux vaut privilégier l’émént HTML natif <code class="highlighter-rouge">&lt;h1&gt;</code>.</p>
+
+<h4 id="préserver-la-sémantique-native-des-éléments">Préserver la sémantique native des éléments</h4>
+<p>La deuxième règle d’ARIA précise :</p>
+
+<blockquote>
+  <p>Ne pas changer la sémantique native d’une élément, à moins que cela ne soit vraiment indispensable.</p>
+</blockquote>
+
+<p>L’ajout de rôles ARIA inappropriés peut rendre une page web ou un composant complètement inutilisable pour certains. Pour chaque rôle, l’utilisateur s’attend à trouver un certain comportement. Si le comportement effectif n’est pas celui qui est attendu, c’est en général un grand problème. Par exemple, pour un élément avec role=”checkbox”, l’utilisateur s’attend à pouvoir cocher la case avec la barre d’espace, et quand cela ne fonctionne pas il est probablement bloqué.</p>
+:ET
