@@ -1,0 +1,71 @@
+I"�<p>Après les rôles, focus sur les états et propriétés définies par ARIA</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://disic.github.io/guide-developpeur/9-utiliser-aria.html">Utiliser ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide du développeur</li>
+  <li>regarder la vidéo <a href="https://youtu.be/88tfx3jLV_M" lang="en" hreflang="en">States and Properties in ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de A11ycasts</li>
+  <li>lire l’article <a href="https://www.w3.org/TR/wai-aria-1.1/#states_and_properties">Supported States and Properties<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du W3C (<span lang="en">World Wide Web Consortium</span>)</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="états-versus-propriétés">États versus propriétés</h3>
+<h4 id="similitudes">Similitudes</h4>
+<p>La spécification ARIA précise :</p>
+
+<blockquote>
+  <p>The terms “states” and “properties” refer to similar features.</p>
+</blockquote>
+
+<blockquote>
+  <p>Les termes “états” et “propriétés” ont des caractéristiques similaires.</p>
+</blockquote>
+
+<p><strong>Il s’agit en effet, dans les deux cas, d’attributs servant à définir un élément et à préciser des informations à son sujet</strong>. Le nom de ces attributs commencent systématiquement par “aria-“.</p>
+
+<h4 id="différences">Différences</h4>
+<p><strong>Les propriétés ARIA permettent de donner une signification supplémentaire à un élément ou d’établir des liens entre différents éléments</strong>. Par exemple :</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">aria-required="true"</code> spécifie qu’un champ doit être renseigné pour valider le formulaire</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">aria-labelledby="..."</code> permet de mettre un id sur un élément, puis de le référencer en tant qu’étiquette pour un ou plusieurs autres éléments de la page</p>
+  </li>
+</ul>
+
+<p><strong>Les états ARIA définissent l’état actuel d’un élément dans la page</strong>. Par exemple :</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">aria-disabled="true"</code> spécifie que le champ d’un formulaire est actuellement désactivé</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">aria-expanded="true"</code> indique qu’un menu déroulant est ouvert</p>
+  </li>
+</ul>
+
+<p><strong>La différence entre états et propriétés est qu’une propriété va rarement changer, tandis qu’un état est amené à changer régulièrement</strong>, notamment par le biais d’actions réalisées par l’internaute. A noter que certaines propriétés peuvent aussi être modifiées, comme par exemple <code class="highlighter-rouge">aria-valuetext</code>.</p>
+
+<p>Etant donné la faible différence entre états et propriétés, la spécification ARIA du W3C fait d’ailleurs référence à la fois aux états et aux propriétés sous le terme générique “attributs”, dans la mesure du possible.</p>
+
+<h3 id="typologie-des-états-et-propriétés">Typologie des états et propriétés</h3>
+<p><strong>Certains états et propriétés sont dit “globaux”, c’est à dire qu’ils peuvent s’appliquer à tous les éléments HTML, indépendamment de leur rôle ARIA</strong>. Il existe 21 états et propriétés globales, que vous pouvez retrouver <a href="https://www.w3.org/TR/wai-aria-1.1/#global_states" hreflang="en">dans cette liste<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>. Par exemple, l’attribut <code class="highlighter-rouge">aria-haspopup="true"</code> permet d’annoncer l’existence d’un sous-menu.</p>
+
+<p>En revanche, d’autres états et propriétés ne peuvent être utilisés qu’en présence d’un rôle spécifique. C’est le cas par exemple de <code class="highlighter-rouge">aria-checked</code> qui ne peut être utilisé qu’en combinaison avec certains rôles comme <code class="highlighter-rouge">checkbox</code>, <code class="highlighter-rouge">radio</code> ou <code class="highlighter-rouge">switch</code>.</p>
+
+<p>Les 46 états et propriétés (globaux et non globaux) se répartissent en 4 grandes catégories :</p>
+<ul>
+  <li>
+    <p><strong><span lang="en">Widget Attributes</span></strong> (24 attributs) : ces attributs relèvent de l’interaction avec l’internaute et sont pris en charge par les rôles widget.</p>
+  </li>
+  <li>
+    <p><strong><span lang="en">Live Region Attributes</span></strong> (4 attributs) : ces attributs sont pris en charge par les rôles de la même catégorie et indiquent des changements de contenu sans modifier la position courante de l’internaute.</p>
+  </li>
+  <li>
+    <p><strong><span lang="en">Drag-and-dDrop Attributes</span></strong> (2 attributs) : ces attributs sont relatifs aux éléments d’interface utilisant le glisser-déposer.</p>
+  </li>
+  <li>
+    <p><strong><span lang="en">Relationship Attributes</span></strong> (16 attributs) : ces attributs clarifient les relations entre des éléments qui ne peuvent pas être facilement déterminées à partir de la structure du document.</p>
+  </li>
+</ul>
+
+:ET
