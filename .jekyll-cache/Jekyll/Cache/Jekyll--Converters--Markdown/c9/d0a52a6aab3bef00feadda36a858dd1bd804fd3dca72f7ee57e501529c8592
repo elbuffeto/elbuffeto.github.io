@@ -1,0 +1,60 @@
+I"�<p>Après les rôles, focus sur les états et propriétés définies par ARIA</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Zones_live_ARIA">Zones live ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+  <li>regarder les vidéos <a href="https://youtu.be/88tfx3jLV_M" lang="en" hreflang="en">Videos of screen readers using ARIA - Live regions<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Zoe Mickley Gillenwater</li>
+  <li>lire l’article <a href="https://disic.github.io/guide-developpeur/9-utiliser-aria.html">Utiliser ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide du développeur</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="définition">Définition</h3>
+<p><strong>Les zones “live” sont des parties de la page dont le contenu est mis à jour dynamiquement par javascript alors que le focus de l’internaute ne se trouve pas forcément dans la zone en question</strong>. Par exemple : les résultats d’un match de foot mis à jour en temps réel.</p>
+
+<p>Jusqu’à encore récemment, ces mises à jour de page n’étaient pas bien prises en charge ce qui pouvait conduire à une relecture intégrale de la page actualisée ou à l’opposé ne rien signaler du tout ce qui laissait l’internaute dans l’ignorance la plus totale.</p>
+
+<p>Les zones live ARIA permettent de signaler la mise à jour d’un contenu et de paramétrer la façon dont cette mise à jour est transmise à l’internaute.</p>
+
+<h3 id="les-attributs-live-regions">Les attributs live regions</h3>
+<h4 id="aria-live"><code class="highlighter-rouge">aria-live</code></h4>
+<p><code class="highlighter-rouge">aria-live</code> permet d’indiquer si une zone est en cours de mise à jour. Cet attribut prend plusieurs valeurs, classées par ordre de priorité avec laquelle le lecteur d’écran doit signaler la mise à jour d’un contenu :</p>
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">aria-live="off"</code> : c’est la valeur par défaut, la mise à jour de contenu n’est pas signalée</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">aria-live="polite"</code> : le contenu mis à jour est restitué dès lors que l’internaute ne réalise aucune action</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">aria-live="assertive"</code> : le contenu mis à jour est restitué immédiatement, même si l’internaute navigue sur d’autres contenus</p>
+  </li>
+</ul>
+
+<p><code class="highlighter-rouge">aria-live="assertive"</code> est donc beaucoup plus intrusive que <code class="highlighter-rouge">aria-live="polite"</code>.</p>
+
+<h4 id="aria-atomic"><code class="highlighter-rouge">aria-atomic</code></h4>
+<p><code class="highlighter-rouge">aria-atomic</code> indique si l’ensemble du contenu mis à jour doit être restitué (<code class="highlighter-rouge">aria-atomic="true"</code>) ou seulement la partie mise à jour (<code class="highlighter-rouge">aria-atomic="false"</code>).</p>
+
+<p>La vidéo <a href="https://www.youtube.com/watch?v=9nZnTdSAkH0&amp;feature=youtu.be">ARIA Live Regions Screen Reader Demo</a> permet de bien comprendre le fonctionnement des attributs <code class="highlighter-rouge">aria-live</code> et <code class="highlighter-rouge">aria-atomic</code> et leur différence de restitution par un lecteur d’écran.</p>
+
+<h4 id="aria-relevant"><code class="highlighter-rouge">aria-relevant</code></h4>
+<p><code class="highlighter-rouge">aria-relevant</code> précise les modifications qui sont effectuées, à savoir s’il s’agit :</p>
+<ul>
+  <li>
+    <p>d’ajouts de contenus : <code class="highlighter-rouge">aria-relevant="additions"</code></p>
+  </li>
+  <li>
+    <p>de suppression de contenus : <code class="highlighter-rouge">aria-relevant="removals"</code></p>
+  </li>
+  <li>
+    <p>de contenus uniquement de type texte : <code class="highlighter-rouge">aria-relevant="text"</code></p>
+  </li>
+  <li>
+    <p>de modification de tout type de contenu : <code class="highlighter-rouge">aria-relevant="all"</code></p>
+  </li>
+</ul>
+
+<h4 id="aria-busy"><code class="highlighter-rouge">aria-busy</code></h4>
+<p>Il s’agit d’un état ARIA. Il permet d’indiquer si un contenu est en cours de mise à jour ou non.</p>
+
+:ET
