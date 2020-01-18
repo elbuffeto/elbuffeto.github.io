@@ -1,0 +1,234 @@
+I"�R<p>A quoi correspondent les live regions ARIA et comment fonctionnent-elles ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://developer.mozilla.org/fr/docs/Accessibilit%C3%A9/ARIA/Zones_live_ARIA">Zones live ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</li>
+  <li>regarder la vidéo <a href="https://youtu.be/BLlJRVyS2UM" lang="en" hreflang="en">Introducing ARIA Live<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Udacity</li>
+  <li>regarder les vidéos <a href="hhttps://zomigi.com/blog/videos-of-screen-readers-using-aria-updated/" lang="en" hreflang="en">Videos of screen readers using ARIA - Live regions<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Zoe Mickley Gillenwater</li>
+  <li>lire l’article <a href="https://disic.github.io/guide-developpeur/9-utiliser-aria.html">Utiliser ARIA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide du développeur</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="de-limportance-de-structurer-une-page">De l’importance de structurer une page</h3>
+<h4 id="pourquoi-et-pour-qui-">Pourquoi et pour qui ?</h4>
+<p><strong>Structurer un contenu (qu’il soit web ou non) signifie le découper en sections logiques, afin de faciliter sa compréhension et son utilisation</strong>. Il s’agit par exemple de regrouper certains contenus par section, d’ajouter une hiérarchie de titres ou même de mettre en valeur les mots ou concepts qui paraissent importants.</p>
+
+<p>Pour une grande partie des internautes, la structuration d’une page web est avant tout visuelle. La mise en forme aide en effet à comprendre la fonction de certaines parties de la page web. Par exemple :</p>
+<ul>
+  <li>
+    <p>le titre de la page généralement de grande taille et  situé en haut du document</p>
+  </li>
+  <li>
+    <p>un menu de navigation sous forme horizontale avec une certaine mise en exergue</p>
+  </li>
+</ul>
+
+<p>Pour autant, <strong>une structuration purement visuelle est loin d’être suffisante</strong>. En effet, pour une personne aveugle qui ne perçoit aucune mise en forme, le menu de navigation ne représente rien d’autre qu’une liste de liens, comme il peut y en avoir d’autres dans la page. Il est donc important de fournir aussi dans le code un moyen de distinguer les éléments importants d’une page.</p>
+
+<h4 id="comment-">Comment ?</h4>
+<p>Il y a deux manières d’ajouter de la structure dans le code d’une page web  :</p>
+<ul>
+  <li>
+    <p><strong>les rôles landmarks ARIA</strong></p>
+  </li>
+  <li>
+    <p><strong>les éléments HTML 5</strong></p>
+  </li>
+</ul>
+
+<p>Historiquement, le langage HTML manquait de balises sémantiques permettant de désigner les différentes sections d’une page telles que le header, le footer ou la navigation. HTML 4 utilisait essentiellement la notion de sections (matérialisés par des éléments <code class="highlighter-rouge">&lt;div&gt;</code>) définies par des titres (<code class="highlighter-rouge">&lt;h1&gt;</code>, <code class="highlighter-rouge">&lt;h2&gt;</code>,<code class="highlighter-rouge"> &lt;h3&gt;</code>, <code class="highlighter-rouge">&lt;h4&gt;</code>,<code class="highlighter-rouge"> &lt;h5&gt;</code> ou<code class="highlighter-rouge"> &lt;h6&gt;</code>). HTML 5 introduit de nouveaux éléments, permettant de mieux caractériser les différentes sections de la page : <code class="highlighter-rouge">&lt;header&gt;</code>,<code class="highlighter-rouge"> &lt;footer&gt;</code>, <code class="highlighter-rouge">&lt;nav&gt;</code>, <code class="highlighter-rouge">&lt;main&gt;</code>…</p>
+
+<p>De la même manière, les rôles landmarks ARIA permettent d’indiquer ce que contiennent les différents blocs qui constituent une page : <code class="highlighter-rouge">role="navigation"</code>, <code class="highlighter-rouge">role="main"</code>, <code class="highlighter-rouge">role="search"</code>… A noter que les landmarks ARIA permettent également de couvrir les applications web, ce qui n’est pas nécessairement le cas du HTML 5.</p>
+
+<p><strong>Il s’agit donc de caractériser sémantiquement, c’est à dire de donner une information sur le rôle et le contenu des différentes sections qui composent une page</strong>.</p>
+
+<p>Pour plus d’informations sur comment déterminer les différentes sections d’une page, il existe de nombreuses ressources :</p>
+<ul>
+  <li>
+    <p>la fiche <a href="https://disic.github.io/guide-integrateur/1-gabarit-general.html#html5aria">Gabarit général<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du Guide de l’intégrateur RGAA (Éléments HTML5 et landmarks ARIA - Comment déterminer ce qu’est…)</p>
+  </li>
+  <li>
+    <p>la notice <a href="https://developer.mozilla.org/fr/docs/Apprendre/HTML/Comment/D%C3%A9couper_une_page_web_en_sections_logiques">Découper une page web en sections logiques<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Mozilla</p>
+  </li>
+  <li>
+    <p>le guide <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/index.html" hreflang="en" lang="en">ARIA Landmarks Example<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du W3C</p>
+  </li>
+</ul>
+
+<h4 id="quels-avantages-">Quels avantages ?</h4>
+<p>Utiliser des marqueurs sémantiques comme des éléments HTML 5 ou des landmarks ARIA, facilite grandement la consultation d’une page web pour de nombreux internautes.</p>
+
+<p>Les personnes aveugles, utilisant des lecteurs d’écran, bénéficient ainsi d’informations sur les régions principales de la page et savent à quoi elles correspondent : le menu de navigation principal peut être distingué d’une simple liste de liens grâce à la balise <code class="highlighter-rouge">&lt;nav&gt;</code> ou au landmark ARIA <code class="highlighter-rouge">role="navigation"</code>.</p>
+
+<p>Les personnes naviguant grâce à leur clavier qui peuvent aussi bénéficier de fonctionnalités de navigation leur permettant de passer rapidement d’une section à l’autre.</p>
+
+<p>Sur cette vidéo intitulée <a href="https://youtu.be/IhWMou12_Vk" lang="en" hreflang="en">How ARIA landmark roles help screen reader users<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>, Léonie Watson fait une démonstration de l’utilisation des rôles landmarks par les lecteurs d’écran : Jaws, par exemple, utilise le symbole ‘;’ pour passer d’une région à l’autre. A chaque landmark atteint, Jaws annonce le type de contenu dont il s’agit.</p>
+
+<h3 id="rôles-landmark-aria-versus-éléments-html">Rôles landmark ARIA versus éléments HTML</h3>
+<h4 id="typologie-comparative">Typologie comparative</h4>
+<p>J’avais évoqué brièvement dans un de mes premiers articles, <a href="/100daysofa11y-day10/">Structure de page</a>, les différents éléments permettant de sectionner une page. Voici un tableau récapitulatif plus complet des éléments HTML 5, mis en perspectice avec les rôles landmarks correspondants (il s’agit d’une traduction du tableau proposé par le W3C sur sa page <a href="https://www.w3.org/TR/wai-aria-practices/examples/landmarks/HTML5.html" lang="en" hreflang="en">ARIA Landmarks Example<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>):</p>
+
+<table>
+  <caption>Correspondance des éléments sectionnants HTML5 avec les landmarks ARIA</caption>
+  <thead>
+    <tr>
+      <th>Éléments HTML</th>
+      <th>Rôles landmark ARIA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>aside</code></td>
+      <td><code>complementary</code></td>
+    </tr>
+    <tr>
+      <td><code>footer</code></td>
+      <td><code>contentinfo</code>, dans le contexte de l'élémént <code>body</code>.
+        <br /><strong>L'élément <code>footer</code> n'est pas équivalent au rôle landmark <code>contentinfo</code></strong> quand il est descendant des éléments HTML suivants :
+        - <code>article</code>
+        - <code>aside</code>
+        - <code>main</code>
+        - <code>nav</code>
+        - <code>section</code>
+        </td>
+    </tr>
+    <tr>
+      <td><code>form</code></td>
+      <td><code>form</code>, lorsqu'il a un nom accessible donné par les attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code></td>
+    </tr>
+    <tr>
+      <td><code>header</code></td>
+      <td><code>banner</code>, dans le contexte de l'élémént <code>body</code>.
+        <br /><strong>L'élément <code>header</code> n'est pas équivalent au rôle landmark  <code>banner</code></strong> quand il est descendant des éléments HTML suivants :
+        - <code>article</code>
+        - <code>aside</code>
+        - <code>main</code>
+        - <code>nav</code>
+        - <code>section</code>
+      </td>  
+    </tr>
+    <tr>
+      <td><code>main</code></td>
+      <td><code>main</code></td>
+    </tr>
+    <tr>
+      <td><code>nav</code></td>
+      <td><code>navigation</code></td>
+    </tr>
+    <tr>
+      <td><code>section</code></td>
+      <td><code>region</code> lorsqu'il a un nom accessible donné par les attributs <code>aria-labelledby</code>, <code>aria-label</code> ou <code>title</code></td>
+    </tr>
+    <tr>
+      <td>pas d'équivalent</td>
+      <td><code>search</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Cas d’usages :</p>
+<ul>
+  <li>
+    <p><strong>il ne peut y avoir qu’une seule balise <code class="highlighter-rouge">&lt;main&gt;</code> et qu’un seul <code class="highlighter-rouge">role="main"</code> par page</strong></p>
+  </li>
+  <li>
+    <p><strong>la balise <code class="highlighter-rouge">&lt;header&gt;</code> peut être utilisée plusieurs fois dans une page, mais <code class="highlighter-rouge">role="banner"</code> ne doit  être employé qu’une seule fois</strong></p>
+  </li>
+  <li>
+    <p><strong>la balise <code class="highlighter-rouge">&lt;footer&gt;</code> peut être utilisée plusieurs fois dans une page, mais <code class="highlighter-rouge">role="contentinfo"</code> ne doit  être employé qu’une seule fois</strong></p>
+  </li>
+  <li><strong>la balise <code class="highlighter-rouge">&lt;nav&gt;</code> et <code class="highlighter-rouge">role="navigation"</code> peuvent être employés plusieurs fois dans une page pour identifier les menus de navigation principaux et secondaires</strong>. Quand plusieurs d’entre eux sont présents dans une page, il peut être intéressant de les différencier grâce à l’attribut <code class="highlighter-rouge">aria-label</code> :
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;nav aria-label="Menu principal"&gt;[...]&lt;/nav&gt;
+&lt;nav aria-label="Menu secondaire"&gt;[...]&lt;/nav&gt;
+</code></pre></div>    </div>
+  </li>
+  <li><code class="highlighter-rouge">role="article"</code> ne fait pas partie des rôles landmarks ARIA mais des rôles de structuration du document. Son équivalent HTML 5 est <code class="highlighter-rouge">&lt;article&gt;</code></li>
+</ul>
+
+<h4 id="quelles-recommandations-">Quelles recommandations ?</h4>
+<p>Le RGAA (Référentiel Général d’Amélioration de l’Accessibilité) est relativement clair. Le critère 12.6 énonce ainsi :</p>
+
+<blockquote>
+  <p>Les zones de regroupement de contenus présentes dans plusieurs pages web (zones d’en-tête, de navigation principale, de contenu principal, de pied de page et de moteur de recherche) peuvent-elles être atteintes ou évitées ?</p>
+</blockquote>
+
+<p>L’une des possibilités pour valider ce critère est : <q>La zone possède un rôle WAI-ARIA de type landmark correspondant à sa nature.</q></p>
+
+<h3 id="dans-la-pratique">Dans la pratique</h3>
+<h3 id="landmarks-aria-ou-éléments-html-que-choisir-">Landmarks ARIA ou éléments HTML, que choisir ?</h3>
+<p>Les éléments sectionnants HTML5 ont été spécialement conçus pour communiquer une signification aux technologies qui interprètent un document. Ils ont donc une sémantique native, qui peut être restituée par un lecteur d’écran par exemple.</p>
+
+<p>ARIA, comme nous l’avons vu précédemment, est une couche sémantique interprétable par les technologies d’assistance. Elle permet d’ajouter une signification à des éléments HTML dépourvus de sémantique (comme un élément <code class="highlighter-rouge">&lt;div&gt;</code> ou  <code class="highlighter-rouge">&lt;span&gt;</code>) ou de modifier une sémantique existante.</p>
+
+<p>Par conséquent, est-il nécessaire de doubler l’utilisation des éléments HTML sectionnants avec ARIA, ou se suffisent-ils à eux-mêmes ? Dans quels cas utiliser les landmarks ARIA ?</p>
+
+<h4 id="pas-de-doctype-html-5">Pas de doctype HTML 5</h4>
+<p>Pour une page qui n’est pas codée en HTML 5 (en HTML 4 ou XHTML par exemple), ajoutez les landmarks ARIA :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div role="banner"&gt;
+   &lt;p&gt;Logo, titre de la page...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div role="navigation"&gt;
+   &lt;ul&gt;
+      &lt;li&gt;Item de navigation&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div role="main"&gt;
+   &lt;p&gt;Contenu principal&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div role="contentinfo"&gt;
+   &lt;p&gt;Autrice, copyright...&lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<h4 id="une-valeur-sémantique-qui-nest-pas-toujours-équivalente">Une valeur sémantique qui n’est pas toujours équivalente</h4>
+<p>Les éléments HTML 5 sectionnants portent une valeur sémantique certes, mais qui n’est pas toujours équivalente à celle des landmarks ARIA. Dans le tableau de comparaison des éléments HTML 5 et des landmarks ARIA, il est par exemple précisé que que l’élément <code class="highlighter-rouge">&lt;header&gt;</code> correspond à <code class="highlighter-rouge">role="banner"</code> uniquement lorsque &lt;header&gt; n’est pas descendant d’un article ou d’un élément section. {&lt;header&gt;} n’a donc pas toujours la même sémantique que {role=”banner”}. Il en va de même pour <code class="highlighter-rouge">&lt;footer&gt;</code> et <code class="highlighter-rouge">contentinfo</code>. Prenons la structure de page suivante :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+  &lt;header&gt;
+     &lt;h1&gt;Titre de la page&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+     &lt;ul&gt;
+        &lt;li&gt;Item navigation&lt;/li&gt;
+     &lt;/ul&gt;
+  &lt;/nav&gt;
+
+  &lt;main&gt;
+     &lt;article&gt;
+      &lt;header&gt;
+        &lt;h2&gt;Titre de l'article&lt;/h2&gt;
+      &lt;/header&gt;
+
+      Contenus de l'article
+
+      &lt;footer&gt;Autrice et date de l'article&lt;/footer&gt;
+     &lt;/article&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+     &lt;p&gt;Autrice, copyright...&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+</code></pre></div></div>
+<p>Ici les balises <code class="highlighter-rouge">&lt;header&gt;</code> et <code class="highlighter-rouge">&lt;footer&gt;</code> sont présentes à plusieurs reprises dans la page mais ont une valeur sémantique qui diffère en fonction de leur emplacement.</p>
+
+<p>J’ai testé ce code en utilisant l’extension Landmarks de Firefox. Résultat : les landmarks <code class="highlighter-rouge">role="header"</code> et <code class="highlighter-rouge">role="contentinfo"</code> sont bien restitués uniquement pour les balises <code class="highlighter-rouge">&lt;header&gt;</code> et <code class="highlighter-rouge">&lt;footer&gt;</code> situées immédiatement après la balise <code class="highlighter-rouge">&lt;body&gt;</code>. Les balises <code class="highlighter-rouge">&lt;header&gt;</code> et <code class="highlighter-rouge">&lt;footer&gt;</code> présentes dans la balise <code class="highlighter-rouge">&lt;article&gt;</code> ne sont pas prises en compte.</p>
+
+<p>L’emplacement des balises semblent donc être suffisant pour distinguer l’emploi du multiples balises <code class="highlighter-rouge">&lt;header&gt;</code> et <code class="highlighter-rouge">&lt;footer&gt;</code>. Pour autant, le RGAA (Référentiel Général d’Amélioration de l’Accessibilité) recommande</p>
+
+<p>RGAA recommande de doubler
+avant combiner les 2 pour un meilleur support
+avantages pour la navigation pour lecteurs d’écran + navigation clavier + extension Firefox
+complément aux liens d’accès rapide</p>
+
+<p>Tests et supports ?</p>
+
+<p>Vous pouvez vous-même tester la restitution des landmarks ARIA sur <a href="https://www.html5accessibility.com/tests/roles-land.html">la page de HTML 5 Accessibility<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a>.</p>
+
+<p>Actuellement les navigateurs n’implémentent pas de fonction native permettant d’utiliser ces landmarks. Cependant il est possible d’installer des extensions comme <a href="https://addons.mozilla.org/fr/firefox/addon/landmarks/" lang="en" hreflang="en">Landmarks</a> de Matthew Tylee Atkinson. Une fois installée, des raccourcis clavier permettent ainsi de naviguer d’une région à l’autre. Le nom de la région atteinte apparaît alors visuellement.</p>
+:ET

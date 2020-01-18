@@ -1,0 +1,119 @@
+I">0<p>Quelles sont les recommandations officielles concernant l’utilisation des landmarks ARIA et des éléments sectionnants HTML5 ?</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire le <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode/criteres/#crit-12-6">critère 12.6 et ses tests associés<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du RGAA (Référentiel Général d’Amélioration de l’Accessibilité)</li>
+  <li>regarder le chapitre <a href="https://www.w3.org/TR/wai-aria-1.1/#host_languages" lang="en" hreflang="en">Implementation in Host Languages<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de la spécification <span lang="en">Accessible Rich Internet Applications (WAI-ARIA) 1.1</span> du W3C (<span lang="en">World Wide Web Consortium</span>)</li>
+</ul>
+
+<h2 id="référentiels-et-spécifications">Référentiels et spécifications</h2>
+<ul>
+  <li><a href="https://html.spec.whatwg.org/multipage/">HTML - Living Standard<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du WHATWG (<span lang="en">Web Hypertext Application Technology Working Group</span>)</li>
+  <li><a href="https://www.w3.org/TR/wai-aria-1.1/">Accessible Rich Internet Applications (WAI-ARIA) 1.1 (<span lang="en">Recommendation</span>)<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du W3C</li>
+  <li><a href="https://www.w3.org/TR/wai-aria-1.2/">Accessible Rich Internet Applications (WAI-ARIA) 1.2 (<span lang="en">Working draft</span>)<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du W3C</li>
+  <li><a href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Authoring Practices 1.1 (<span lang="en">Working Group </span>)<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du W3C</li>
+  <li><a href="https://w3c.github.io/html-aria/" lang="en" hreflang="en">ARIA in HTML (<span lang="en">Editor’s draft</span>)<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> du W3C</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="du-côté-des-wcag">Du côté des WCAG</h3>
+<h4 id="la-sémantique-native-en-priorité">La sémantique native en priorité</h4>
+<p>La spécification <a href="https://www.w3.org/TR/wai-aria-1.1/">Accessible Rich Internet Applications (WAI-ARIA) 1.1</a> du W3C n’évoque pas explicitement les équivalences entre les landmarks ARIA et les éléments HTML 5. Toutefois, un chapitre est consacré à l’implémentation d’ARIA dans les langages hôtes (c’est-à-dire le HTML dans le cas qui nous intéresse) :</p>
+
+<blockquote>
+  <p><span lang="en">Therefore, there are many situations in which WAI-ARIA semantics are redundant with host language semantics. These host language features can be viewed as having “implicit WAI-ARIA semantics”. (…) Features with implicit WAI-ARIA semantics satisfy WAI-ARIA structural requirements such as required owned elements, required states and properties, etc. and do not require explicit WAI-ARIA semantics to be provided.</span></p>
+</blockquote>
+
+<blockquote>
+  <p>Par conséquent, il existe de nombreuses situations dans lesquelles la sémantique WAI-ARIA est redondante avec la sémantique du langage hôte. Ces caractéristiques du langage hôte peuvent être considérées comme ayant une “sémantique WAI-ARIA implicite”. (…) Les fonctionnalités avec une sémantique WAI-ARIA implicite satisfont aux exigences structurelles WAI-ARIA telles que les éléments spécifiques requis, les états et propriétés requis, etc. et ne nécessitent pas de fournir une sémantique WAI-ARIA explicite.</p>
+</blockquote>
+
+<p>La spécification <a href="https://www.w3.org/TR/wai-aria-practices/">WAI-ARIA Authoring Practices 1.1 </a> précise quant à elle :</p>
+
+<blockquote>
+  <p><span lang="en">It is important to understand that many HTML sectioning (e.g. main, nav, aside …) elements by default define ARIA landmarks.</span></p>
+</blockquote>
+
+<blockquote>
+  <p>Il est important de comprendre que de nombreux éléments de sectionnement HTML (par exemple main, nav, aside…) définissent par défaut les landmarks ARIA.</p>
+</blockquote>
+
+<p><strong>Les éléments sectionnant HTML 5 possédent donc une valeur sémantique native et sont équivalents aux landmarks ARIA. Par conséquent, ils n’ont pas à être doublés du rôle correspondant</strong>.</p>
+
+<h4 id="test-au-validateur-du-w3c">Test au validateur du W3C</h4>
+<p>Prenons le code suivant et soumettons-le au validateur du W3C :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+    &lt;header role="banner"&gt;
+       &lt;h1&gt;Titre de la page&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;nav role="navigation"&gt;
+       &lt;ul&gt;
+          &lt;li&gt;Item navigation&lt;/li&gt;
+       &lt;/ul&gt;
+    &lt;/nav&gt;
+
+    &lt;main role="main"&gt;
+       Contenu principal
+    &lt;/main&gt;
+
+    &lt;footer role="contentinfo"&gt;
+       &lt;p&gt;Autrice, copyright...&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+</code></pre></div></div>
+
+<p>Résultat, la page n’est pas invalidée. Toutefois, plusieurs avertissements nous sont donnés :</p>
+<ul>
+  <li>
+    <p><span lang="en">Warning: The <code class="highlighter-rouge">banner</code> role is unnecessary for element <code class="highlighter-rouge">&lt;header&gt;</code></span></p>
+  </li>
+  <li>
+    <p><span lang="en">Warning: The <code class="highlighter-rouge">navigation</code> role is unnecessary for element <code class="highlighter-rouge">&lt;nav&gt;</code></span></p>
+  </li>
+</ul>
+
+<p>Il est par conséquent recommandé de supprimer le rôle redondant.</p>
+
+<h4 id="vers-une-recommandation-explicite-">Vers une recommandation explicite ?</h4>
+<p>Une spécification <a href="https://w3c.github.io/html-aria/" lang="en" hreflang="en">ARIA in HTML</a> du W3C est actuellement en cours de rédaction. Son contenu est donc à l’état de brouillon et peut  encore largement changer d’ici sa validation définitive. Toutefois, on y trouve la note suivante :</p>
+
+<blockquote>
+  <p><span lang="en">Setting an ARIA role and/or aria-* attribute that matches the implicit ARIA semantics is unnecessary and is NOT RECOMMENDED as these properties are already set by the browser.</span></p>
+</blockquote>
+
+<blockquote>
+  <p>La définition d’un rôle ARIA et/ou d’un attribut aria-* correspondant à la sémantique ARIA implicite n’est pas nécessaire et n’est PAS RECOMMANDÉE car ces propriétés sont déjà définies par le navigateur.</p>
+</blockquote>
+
+<p>Cette recommandation va donc également dans le sens de la spécification ARIA 1.1, tout en étant beaucoup plus explicite.</p>
+
+<h3 id="recommandations-du-côté-du-rgaa">Recommandations du côté du RGAA</h3>
+<p>Le RGAA (Référentiel Général d’Amélioration de l’Accessibilité) fait référence aux landmarks dans le critère 12.6 :</p>
+
+<blockquote>
+  <p>Les zones de regroupement de contenus présentes dans plusieurs pages web (zones d’en-tête, de navigation principale, de contenu principal, de pied de page et de moteur de recherche) peuvent-elles être atteintes ou évitées ?</p>
+</blockquote>
+
+<p>L’une des conditions pour valider ce critère est : <q> La zone possède un rôle WAI-ARIA de type landmark correspondant à sa nature. </q> Aucune mention n’est faite des éléments sectionnants HTML 5.</p>
+
+<p>Si l’on se réfère ensuite à <a href="https://www.numerique.gouv.fr/publications/rgaa-accessibilite/methode/glossaire/#landmarks">la défintion de “landmarks” dans le glossaire du RGAA<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg><a></a>, on trouve les indications suivantes :</a></p>
+
+<blockquote>
+  <ul>
+    <li>La zone d’en-tête doit avoir un attribut WAI-ARIA role=”banner”;</li>
+    <li>Le menu de navigation principal doit avoir un attribut WAI-ARIA role=”navigation”;</li>
+    <li>La zone de contenu principal doit avoir un attribut WAI-ARIA role=”main”;</li>
+    <li>La zone de pied de page doit avoir un attribut WAI-ARIA role=”contentinfo”;</li>
+    <li>La zone de moteur de recherche sur le site doit avoir un attribut WAI-ARIA role=”search”.</li>
+  </ul>
+</blockquote>
+
+<p>Le glossaire ne précise pas si ces zones doivent être balisées avec des éléments HTML 5 ou non. Toutefois si tel était le cas, la validation du critère ne pourrait se faire que si ces éléments sont doublés du rôle landmark correspondant (et si aucune autre condition de validation du critère n’est mise en oeuvre).</p>
+
+<p><strong>Le RGAA recommande donc explicitement l’utilisation des landmarks ARIA et ce même si des éléments HTML 5 sont employés pour structurer le code</strong>. L’information est donc doublée.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>On a donc une contradiction entre les recommandations du W3C et celles du RGAA. Dans une dernière partie, j’aborderai les cas pratiques d’utilisation des landmarks ARIA et éléments HTML5, ainsi que leur support par les navigateurs et technologies d’assistance.</p>
+:ET
