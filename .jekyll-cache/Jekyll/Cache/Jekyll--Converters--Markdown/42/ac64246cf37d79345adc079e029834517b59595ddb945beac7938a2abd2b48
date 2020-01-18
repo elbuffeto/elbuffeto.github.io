@@ -1,0 +1,94 @@
+I"+<p>Après la théorie, place à la pratique : comment sont gérées les différentes implémentations</p>
+
+<h2 id="ce-que-jai-fait-">Ce que j’ai fait :</h2>
+<ul>
+  <li>lire l’article <a href="https://anysurfer.be/fr/blog/detail/support-des-roles-aria-et-elements-html5-par-les-lecteurs-decran">Support des rôles landmark ARIA et éléments sectionnants HTML5 par les lecteurs d’écran<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Sophie Schuermans</li>
+  <li>lire l’article <a href="https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html" lang="en" hreflang="en">HTML 5 and ARIA Landmarks<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de l’université de Deque</li>
+  <li>lire l’article <a href="http://www.weba11y.com/blog/2016/04/22/screen-reader-support-for-new-html5-section-elements/" lang="en" hreflang="en">Screen Reader Support for new HTML5 Section Elements<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Becka11y</li>
+</ul>
+
+<h2 id="ce-que-jai-appris">Ce que j’ai appris</h2>
+<h3 id="le-recours-systématique-aux-landmarks-aria">Le recours systématique aux landmarks ARIA…</h3>
+<h4 id="-si-le-code-nest-pas-du-html5">… si le code n’est pas du HTML5</h4>
+<p>Pour une page qui n’est pas codée en HTML 5 (en HTML 4 ou XHTML par exemple), il est nécessaire d’ajouter les landmarks ARIA afin de faciliter la compréhension et la navigation de la page pour les personnes aveugles :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;div role="banner"&gt;
+   &lt;p&gt;Logo, titre de la page...&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div role="navigation"&gt;
+   &lt;ul&gt;
+      &lt;li&gt;Item de navigation&lt;/li&gt;
+   &lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div role="main"&gt;
+   &lt;p&gt;Contenu principal&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div role="contentinfo"&gt;
+   &lt;p&gt;Autrice, copyright...&lt;/p&gt;
+&lt;/div&gt;
+</code></pre></div></div>
+
+<h4 id="-sil-ny-a-pas-déquivalent-html-5">… s’il n’y a pas d’équivalent HTML 5</h4>
+<p>C’est le cas du rôle landmark <code class="highlighter-rouge">search</code> qui ne possède pas d’équivalent en HTML5. Par conséquent, il est conseillé d’identifiquer le moteur de recherche avec <code class="highlighter-rouge">role="search"</code>. Par exemple :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;form role="search"&gt;
+  &lt;input type="text" title="Recherche par mots-clés" /&gt;
+  &lt;input type="submit" value="Rechercher" /&gt;
+&lt;/form&gt;
+</code></pre></div></div>
+
+<h3 id="utiliser-simultanément-les-landmarks-aria-et-les-éléments-html-5">Utiliser simultanément les landmarks ARIA et les éléments HTML 5</h3>
+<h4 id="doubler-la-valeur-sémantique-pour-un-meilleur-support">Doubler la valeur sémantique pour un meilleur support</h4>
+<p>Il a fallu du temps avant que les navigateurs et les technologies d’assistance interprètent correctement les nouvelles balises HTML 5 de structuration.</p>
+
+<p>Dans son article <a href="https://anysurfer.be/fr/blog/detail/support-des-roles-aria-et-elements-html5-par-les-lecteurs-decran">Support des rôles landmark ARIA et éléments sectionnants HTML5 par les lecteurs d’écran<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> en date de juillet 2013, Sophie Schuermans montre ainsi que les éléments HTML 5 sans ARIA n’étaient quasiment pas supportés contrairement aux landmarks ARIA. L’autrice préconisait donc de systématiquement doubler les éléments HTML 5 des lanmarks ARIA afin de garantir un support optimal. L’article  <a href="https://dequeuniversity.com/assets/html/jquery-summit/html5/slides/landmarks.html" lang="en" hreflang="en">HTML 5 and ARIA Landmarks<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de l’Université de Deque fait le même constat.</p>
+
+<p>Plus récemment, l’article <a href="http://www.weba11y.com/blog/2016/04/22/screen-reader-support-for-new-html5-section-elements/" lang="en" hreflang="en">Screen Reader Support for new HTML5 Section Elements<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> en date d’avril 2016, montre que le support des éléments HTML 5 seuls par les navigateurs et les lecteurs d’écran est plutôt très bon.</p>
+
+<p><strong>La question de doubler la valeur sémantique des éléments pour une meilleure compatibilité se pose donc de moins en moins, à minima pour les navigateurs et lecteurs d’écran récents</strong>. Toutefois, afin de garantir le meilleur support possible, notamment sur d’anciennes versions, le doublement de la valeur sémantique peut être une garantie qui, à fortiori, n’engendre pas d’erreurs à la validation de la page par le W3C.</p>
+
+<h4 id="une-valeur-sémantique-qui-nest-pas-toujours-équivalente">Une valeur sémantique qui n’est pas toujours équivalente</h4>
+<p>Les éléments HTML 5 sectionnants portent une valeur sémantique certes, mais qui n’est pas toujours équivalente à celle des landmarks ARIA.</p>
+
+<p>Dans le tableau de comparaison des éléments HTML 5 et des landmarks ARIA (voir l’article <a href="/100daysofa11y-day69">Landmarks ARIA ou éléments HTML 5 ?  (1/3)</a>), il est par exemple précisé que que l’élément <code class="highlighter-rouge">&lt;header&gt;</code> correspond à <code class="highlighter-rouge">role="banner"</code> uniquement lorsque <code class="highlighter-rouge">&lt;header&gt;</code> n’est pas descendant d’un article ou d’un élément section. <code class="highlighter-rouge">&lt;header&gt;</code> n’a donc pas toujours la même sémantique que <code class="highlighter-rouge">role="banner"</code>. Il en va de même pour <code class="highlighter-rouge">&lt;footer&gt;</code> et <code class="highlighter-rouge">contentinfo</code>.</p>
+
+<p>Prenons la structure de page suivante :</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;body&gt;
+  &lt;header&gt;
+     &lt;h1&gt;Titre de la page&lt;/h1&gt;
+  &lt;/header&gt;
+
+  &lt;nav&gt;
+     &lt;ul&gt;
+        &lt;li&gt;Item navigation&lt;/li&gt;
+     &lt;/ul&gt;
+  &lt;/nav&gt;
+
+  &lt;main&gt;
+     &lt;article&gt;
+      &lt;header&gt;
+        &lt;h2&gt;Titre de l'article&lt;/h2&gt;
+      &lt;/header&gt;
+
+      Contenus de l'article
+
+      &lt;footer&gt;Autrice et date de l'article&lt;/footer&gt;
+     &lt;/article&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+     &lt;p&gt;Autrice, copyright...&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;
+</code></pre></div></div>
+<p>Ici les balises <code class="highlighter-rouge">&lt;header&gt;</code> et <code class="highlighter-rouge">&lt;footer&gt;</code> sont présentes à plusieurs reprises dans la page mais ont une valeur sémantique qui diffère en fonction de leur emplacement.</p>
+
+<p>J’ai testé ce code en utilisant l’extension Firefox <a href="https://addons.mozilla.org/fr/firefox/addon/landmarks/" lang="en" hreflang="en">Landmarks<span class="sr-only">(lien externe)</span><svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="12" height="12" aria-hidden="true"><path id="stroke-ext" fill="#fff" stroke="#06c" d="M1.5 4.5h6v6h-6z"></path><path id="fill-ext" d="M4 2.5l1 1 .25.75-2.5 2.25L5.5 9.25l2.25-2.5.75.25 1 1L11 6.5V1H5.5L4 2.5z" fill="#06f" fill-rule="evenodd"></path><path d="M6 2h4v4l-.5.75-1.25-2-3 3.25L4 6.75l3.25-3-2-1.25L6 2z" fill="#fff" fill-rule="evenodd"></path></svg></a> de Matthew Tylee Atkinson. Résultat : les landmarks <code class="highlighter-rouge">role="header"</code> et <code class="highlighter-rouge">role="contentinfo"</code> sont bien restitués uniquement pour les balises <code class="highlighter-rouge">&lt;header&gt;</code> et <code class="highlighter-rouge">&lt;footer&gt;</code> situées immédiatement après la balise <code class="highlighter-rouge">&lt;body&gt;</code>. Les balises <code class="highlighter-rouge">&lt;header&gt;</code> et <code class="highlighter-rouge">&lt;footer&gt;</code> présentes dans la balise <code class="highlighter-rouge">&lt;article&gt;</code> ne sont pas prises en compte.</p>
+
+<p>L’emplacement des balises semblent donc être suffisant pour distinguer l’emploi du multiples balises <code class="highlighter-rouge">&lt;header&gt;</code> et <code class="highlighter-rouge">&lt;footer&gt;</code>. Pour autant, le RGAA (Référentiel Général d’Amélioration de l’Accessibilité) recommande bien de doubler la valeur sémantique (voir l’article <a href="/100daysofa11y-day70">Landmarks ARIA ou éléments HTML 5 ? (2/3)</a>).</p>
+
+:ET
